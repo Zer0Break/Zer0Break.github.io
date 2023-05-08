@@ -63,7 +63,7 @@ export default ({
   heading = "Y sabemos bien cómo hacerlo!",
  description="Los mejores en apreciaciones de vehículos, con la mejor tecnología y la mejor experiencia en el mercado.",
   primaryButtonText="Iniciemos!",
-  primaryButtonUrl="#",
+  primaryButtonUrl="/evaluador",
   watchVideoButtonText="Ver Video",
   watchVideoYoutubeUrl="https://www.youtube.com/embed/wA8LriKDBAI",
   imageSrc=DesignIllustration,

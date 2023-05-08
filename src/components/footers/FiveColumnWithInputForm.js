@@ -75,7 +75,7 @@ export default () => {
             <ColumnHeading>Productos</ColumnHeading>
             <LinkList>
               <LinkListItem>
-                <Link tw="opacity-50 cursor-not-allowed">Iniciar Sesion</Link>
+                <Link tw="opacity-50 cursor-not-allowed hidden">Iniciar Sesion</Link>
               </LinkListItem>
               <LinkListItem>
                 <Link tw="opacity-50 cursor-not-allowed">Personal</Link>

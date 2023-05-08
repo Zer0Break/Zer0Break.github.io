@@ -102,6 +102,7 @@ import { css } from "styled-components/macro"; //eslint-disable-line
 import ComponentRenderer from "ComponentRenderer.js";
 import LandingPage from "LandingPage.js";
 import EvaluadorPage from "pages/Evaluador.js";
+import ProblemasPage from "pages/Problemas.js";
 import MainLandingPage from "MainLandingPage.js";
 import ThankYouPage from "ThankYouPage.js";
 
@@ -122,6 +123,7 @@ export default function App() {
 
           <Route path="/MainLandingPage" element={<MainLandingPage />} />
           <Route path="/Evaluador" element={<EvaluadorPage />} />
+          <Route path="/Problemas" element={<ProblemasPage />} />
           <Route path="/thank-you" element={<ThankYouPage />} />
           <Route path="/" element={<LandingPage />} />
         </Routes>

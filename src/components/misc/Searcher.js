@@ -41,32 +41,32 @@ export default ({
   subheading = "Buscador de Precios",
   primaryButtonText = "Next",
   primaryButtonUrl = "https://timerse.com",
- 
+
   pushDownFooter = true,
   eMarcas = [
-            { name: 'Honda', code: 'NY' },
-            { name: 'Toyota', code: 'RM' },
-            { name: 'Hyundai', code: 'LDN' },
-            { name: 'Mercedez-Benz', code: 'IST' },
-            { name: 'Lamborghini', code: 'PRS' }
-        ],
+    { name: 'Honda', code: 'NY' },
+    { name: 'Toyota', code: 'RM' },
+    { name: 'Hyundai', code: 'LDN' },
+    { name: 'Mercedez-Benz', code: 'IST' },
+    { name: 'Lamborghini', code: 'PRS' }
+  ],
 
   eModelos = [
-            { name: 'CR-V', code: 'NY' },
-            { name: 'Highlander', code: 'RM' },
-            { name: 'Santa Fe', code: 'LDN' },
-            { name: 'GLE 63', code: 'IST' },
-            { name: 'Portofino', code: 'PRS' }
-        ],
+    { name: 'CR-V', code: 'NY' },
+    { name: 'Highlander', code: 'RM' },
+    { name: 'Santa Fe', code: 'LDN' },
+    { name: 'GLE 63', code: 'IST' },
+    { name: 'Portofino', code: 'PRS' }
+  ],
 
   eAnos = [
-            { name: '2023', code: 'NY' },
-            { name: '2020', code: 'RM' },
-            { name: '2016', code: 'LDN' },
-            { name: '2015', code: 'IST' },
-            { name: '2010', code: 'PRS' }
-        ]
-  
+    { name: '2023', code: 'NY' },
+    { name: '2020', code: 'RM' },
+    { name: '2016', code: 'LDN' },
+    { name: '2015', code: 'IST' },
+    { name: '2010', code: 'PRS' }
+  ]
+
 
 }) => {
   return (
@@ -78,28 +78,27 @@ export default ({
             <TextContainer>
               {subheading && <Subheading>{subheading}</Subheading>}
 
-{/* <MyListbox as="a"/> */}
+              {/* <MyListbox as="a"/> */}
             </TextContainer>
 
           </Row>
           <SelectRow>
             <SelectContainer tw="lg:col-span-3" >
-            <Select4 label= "Marca" optiones= {eMarcas}/>
+              <Select4 label="Marca" optiones={eMarcas} />
             </SelectContainer>
             <SelectContainer tw="lg:col-span-4">
-              <Select4 label="Modelo" optiones= {eModelos}/>
+              <Select4 label="Modelo" optiones={eModelos} />
             </SelectContainer>
             <SelectContainer tw="lg:col-span-2">
-             <Select4 label="Año" optiones= {eAnos}/>
-              {/* <ExampleSelect tw="" label="Año"/> */}
+              <Select4 label="Año" optiones={eAnos} />
             </SelectContainer>
             <SelectContainer>
               <PrimaryButton buttonRounded={false} as="a" href={primaryButtonUrl} tw="">
-              {primaryButtonText}
-            </PrimaryButton>
+                {primaryButtonText}
+              </PrimaryButton>
             </SelectContainer>
 
-            
+
 
           </SelectRow>
 

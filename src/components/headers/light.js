@@ -79,31 +79,31 @@ export default ({ roundedHeaderButton = false, logoLink, links, className, colla
    */
   const defaultLinks = [
     <NavLinks key={1}>
-      
+
       <NavLink href="/#" >Inicio</NavLink>
-      
-          <NavLink href="/Evaluador">
-            
-            Busca tu precio!
-      <Badge anchorOrigin={{
-        vertical: 'top',
-        horizontal: 'right',
-      }} badgeContent={"New"} color="primary" overlap="circular"  css={css`
+
+      <NavLink href="/Evaluador">
+
+        Busca tu precio!
+        <Badge anchorOrigin={{
+          vertical: 'top',
+          horizontal: 'right',
+        }} badgeContent={"New"} color="primary" overlap="circular" css={css`
       ${tw`animate-pulse`}
       margin-left: 0.7em;
       `}>""
-      </Badge>
-            
-            </NavLink>
+        </Badge>
+
+      </NavLink>
 
 
-      <NavLink tw="opacity-50 cursor-not-allowed ">Problemas comunes </NavLink>
+      <NavLink tw="" href="/Problemas" >Problemas comunes </NavLink>
       <NavLink tw="opacity-50 cursor-not-allowed ">Historial del Auto</NavLink>
       <NavLink tw="opacity-50 cursor-not-allowed    /*no borrar la derecha*/  lg:ml-16! hidden">
         Iniciar sesión
       </NavLink>
-      <PrimaryLink css={roundedHeaderButton && tw`rounded-full`}href="/#" tw="opacity-50 cursor-not-allowed hidden">Regístrate!</PrimaryLink>
-      
+      <PrimaryLink css={roundedHeaderButton && tw`rounded-full`} href="/#" tw="opacity-50 cursor-not-allowed hidden">Regístrate!</PrimaryLink>
+
     </NavLinks>
   ];
 
