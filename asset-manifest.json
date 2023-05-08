@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.03d07f94.css",
-    "main.js": "/static/js/main.37846013.js",
+    "main.js": "/static/js/main.5cbcbaa2.js",
     "static/media/MainLandingPageHero.png": "/static/media/MainLandingPageHero.30b380787ef7adb09eb6.png",
     "static/media/AgencyLandingPage.jpeg": "/static/media/AgencyLandingPage.717f8ed6737d6161b153.jpeg",
     "static/media/primeicons.svg": "/static/media/primeicons.e1441b135b3ca9ad643c.svg",
@@ -22,6 +22,7 @@
     "static/media/PricingPage.jpeg": "/static/media/PricingPage.c6e93374a0c9c5f10c44.jpeg",
     "static/media/hero-screenshot-2.png": "/static/media/hero-screenshot-2.241aac1fbc66db29d873.png",
     "static/media/ContactUsPage.jpeg": "/static/media/ContactUsPage.271456291b98013cc748.jpeg",
+    "static/media/sstest2.png": "/static/media/sstest2.0411841a6e5dc6a2af7a.png",
     "static/media/design-illustration-2.svg": "/static/media/design-illustration-2.6da6a00b20c07c4a9b65d1870679e1b8.svg",
     "static/media/stats-illustration.svg": "/static/media/stats-illustration.89e20edcbf2cccadc1f28b4a73a486ac.svg",
     "static/media/app-mockup.png": "/static/media/app-mockup.3cdce84cf7ea691ecca9.png",
@@ -97,10 +98,10 @@
     "static/media/arrow-right-3-icon.svg": "/static/media/arrow-right-3-icon.d415f77e8dc81ff77fdb53c0ee2da771.svg",
     "static/media/handle-icon.svg": "/static/media/handle-icon.75eb6395a03cd55833f64fd24df39ff5.svg",
     "main.03d07f94.css.map": "/static/css/main.03d07f94.css.map",
-    "main.37846013.js.map": "/static/js/main.37846013.js.map"
+    "main.5cbcbaa2.js.map": "/static/js/main.5cbcbaa2.js.map"
   },
   "entrypoints": [
     "static/css/main.03d07f94.css",
-    "static/js/main.37846013.js"
+    "static/js/main.5cbcbaa2.js"
   ]
 }
