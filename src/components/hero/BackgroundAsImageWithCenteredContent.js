@@ -2,9 +2,13 @@ import React from "react";
 import tw from "twin.macro";
 import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
+import Hero from "components/hero/TwoColumnWithVideo.js";
 
 import Header, { NavLink, NavLinks, PrimaryLink as PrimaryLinkBase, LogoLink, NavToggle, DesktopNavLinks } from "../headers/light.js";
 
+const description2 = tw.span`inline-block mt-8 text-red-500`;
+
+const HighlightedText2 = tw.span`bg-primary-500 text-gray-100 px-4 transform -skew-x-12 inline-block`;
 const StyledHeader = styled(Header)`
   ${tw`pt-8 max-w-none w-full`}
   ${DesktopNavLinks} ${NavLink}, ${LogoLink} {
@@ -39,20 +43,20 @@ export default () => {
   const navLinks = [
     <NavLinks key={1}>
       <NavLink href="#">
-        About
+        Inicio
       </NavLink>
       <NavLink href="#">
-        Blog
+        Busca tu precio!
       </NavLink>
       <NavLink href="#">
-        Locations
+        Problemas comunes
       </NavLink>
       <NavLink href="#">
-        Pricing
+        Historial del auto
       </NavLink>
     </NavLinks>,
     <NavLinks key={2}>
-      <PrimaryLink href="/#">
+      <PrimaryLink href="/#" hidden>
         Hire Us
       </PrimaryLink>
     </NavLinks>
@@ -64,11 +68,12 @@ export default () => {
       <HeroContainer>
         <StyledHeader links={navLinks} />
         <Content>
-          <Heading>
-              Book Music & Comedy Events
-              <br />
-              anywhere in New York
-          </Heading>
+          <Hero
+          
+          heading={<>En AutoPanas sabemos de <HighlightedText2>Precios.</HighlightedText2></>}
+        description2="Herramienta para encontrar el precio actual de cualquier vehiculo en el mercado dominicano"
+          
+          />
           <PrimaryAction>Search Events Near Me</PrimaryAction>
         </Content>
       </HeroContainer>

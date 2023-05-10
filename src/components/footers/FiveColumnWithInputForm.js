@@ -8,6 +8,8 @@ import LogoImage from "images/logo.svg";
 import { ReactComponent as FacebookIcon } from "images/facebook-icon.svg";
 import { ReactComponent as TwitterIcon } from "images/twitter-icon.svg";
 import { ReactComponent as YoutubeIcon } from "images/youtube-icon.svg";
+import { ReactComponent as InstagramIcon } from "images/iconoInstagram.svg";
+
 
 const Container = tw.div`relative bg-gray-200 text-gray-700 -mb-8 -mx-8 px-8 py-20 lg:py-24`;
 const Content = tw.div`max-w-screen-xl mx-auto relative z-10`;
@@ -52,39 +54,42 @@ export default () => {
       <Content>
         <SixColumns>
           <Column>
-            <ColumnHeading>Main</ColumnHeading>
+            <ColumnHeading>Interacción</ColumnHeading>
             <LinkList>
             {//agregar los href="#" a estos links
             }
               <LinkListItem>
               
-                <Link tw="opacity-50 cursor-not-allowed">Blog</Link>
+                <Link href = "Contacto">Contactenos</Link>
               </LinkListItem>
               <LinkListItem>
-                <Link href="#" >FAQs</Link>
+                <Link href="FaQs">FAQs</Link>
               </LinkListItem>
               <LinkListItem>
-                <Link tw="opacity-50 cursor-not-allowed">Soporte</Link>
+                <Link tw="opacity-50 cursor-not-allowed hidden">Soporte</Link>
               </LinkListItem>
               <LinkListItem>
-                <Link tw="opacity-50 cursor-not-allowed">Nosotros</Link>
+                <Link href="Nosotros">Nosotros</Link>
               </LinkListItem>
             </LinkList>
           </Column>
           <Column>
-            <ColumnHeading>Productos</ColumnHeading>
+            <ColumnHeading>Servicios</ColumnHeading>
             <LinkList>
               <LinkListItem>
                 <Link tw="opacity-50 cursor-not-allowed hidden">Iniciar Sesion</Link>
               </LinkListItem>
               <LinkListItem>
-                <Link tw="opacity-50 cursor-not-allowed">Personal</Link>
+                <Link href="#">Historial del auto</Link>
               </LinkListItem>
               <LinkListItem>
-                <Link tw="opacity-50 cursor-not-allowed">Negocios</Link>
+                <Link href="#">Busca tu precio</Link>
               </LinkListItem>
               <LinkListItem>
-                <Link tw="opacity-50 cursor-not-allowed">Equipo</Link>
+                <Link href="#">Problemas comunes</Link>
+              </LinkListItem>
+              <LinkListItem>
+                <Link tw="opacity-50 cursor-not-allowed hidden">Equipo</Link>
               </LinkListItem>
             </LinkList>
           </Column>
@@ -92,13 +97,13 @@ export default () => {
             <ColumnHeading>Novedades</ColumnHeading>
             <LinkList>
               <LinkListItem>
-                <Link tw="opacity-50 cursor-not-allowed">Recomendaciones</Link>
+                <Link tw="opacity-50 cursor-not-allowed hidden">Recomendaciones</Link>
               </LinkListItem>
               <LinkListItem>
-                <Link tw="opacity-50 cursor-not-allowed">Eventos</Link>
+                <Link tw="opacity-50 cursor-not-allowed hidden">Eventos</Link>
               </LinkListItem>
               <LinkListItem>
-                <Link tw="opacity-50 cursor-not-allowed">Noticias</Link>
+                <Link href = "BlogIndex">Blog</Link>
               </LinkListItem>
               <LinkListItem>
                 <Link tw="opacity-50 cursor-not-allowed hidden">Office</Link>
@@ -109,16 +114,16 @@ export default () => {
             <ColumnHeading>Legal</ColumnHeading>
             <LinkList>
               <LinkListItem>
-                <Link tw="opacity-50 cursor-not-allowed hidden">GDPR</Link>
+                <Link tw="opacity-50 cursor-not-allowed hidden"> GDPR</Link>
               </LinkListItem>
               <LinkListItem>
-                <Link tw="opacity-50 cursor-not-allowed">Pol&iacute;ticas de Privacidad</Link>
+                <Link href="Politicas">Políticas de Privacidad</Link>
               </LinkListItem>
               <LinkListItem>
-                <Link tw="opacity-50 cursor-not-allowed">T&eacute;rminos de Uso</Link>
+                <Link href="Terminos">Términos de Uso</Link>
               </LinkListItem>
               <LinkListItem>
-                <Link tw="opacity-50 cursor-not-allowed">Reclamaciones</Link>
+                <Link tw="opacity-50 cursor-not-allowed hidden">Reclamaciones</Link>
               </LinkListItem>
             </LinkList>
           </Column>
@@ -139,9 +144,9 @@ export default () => {
         <ThreeColRow>
           <LogoContainer>
             <LogoImg src={LogoImage} />
-            <LogoText>Computados Inc.</LogoText>
+            <LogoText>ZeroBreak Inc.</LogoText>
           </LogoContainer>
-          <CopywrightNotice>&copy; 2023 Computados Inc. All Rights Reserved.</CopywrightNotice>
+          <CopywrightNotice>&copy; 2023 ZeroBreak Inc. All Rights Reserved.</CopywrightNotice>
           <SocialLinksContainer>
             <SocialLink href="https://facebook.com">
               <FacebookIcon />
@@ -151,6 +156,9 @@ export default () => {
             </SocialLink>
             <SocialLink href="https://youtube.com">
               <YoutubeIcon />
+            </SocialLink>
+            <SocialLink href="https://www.instagram.com/autopanas.do/">
+              <InstagramIcon />
             </SocialLink>
           </SocialLinksContainer>
         </ThreeColRow>

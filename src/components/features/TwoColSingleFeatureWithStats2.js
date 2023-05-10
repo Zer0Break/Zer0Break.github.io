@@ -46,7 +46,7 @@ export default ({
       Estamos haciendo esto desde <wbr /> since <span tw="text-primary-500">2019.</span>
     </>
   ),
-  description = "AutoAprecio es una plataforma Dominicana en línea que proporciona información detallada para la investigación de vehículos nuevos y usados, comparar diferentes opciones, encontrar vehículos en venta y tomar decisiones informadas al respecto. Somos una guía para todo lo relacionado con la industria vehicular, desde conocer el valor de algún vehículo hasta buscar y comprar tu próximo vehiculo.",
+  description = "AutoPanas es una plataforma Dominicana en línea que proporciona información detallada para la investigación de vehículos nuevos y usados, comparar diferentes opciones, encontrar vehículos en venta y tomar decisiones informadas al respecto. Somos una guía para todo lo relacionado con la industria vehicular, desde conocer el valor de algún vehículo hasta buscar y comprar tu próximo vehiculo.",
   primaryButtonText = "Saber más",
   primaryButtonUrl = "/#",
   imageSrc = StatsIllustrationSrc,

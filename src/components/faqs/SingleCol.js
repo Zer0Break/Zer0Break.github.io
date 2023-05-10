@@ -9,6 +9,9 @@ import { Container, ContentWithPaddingXl } from "components/misc/Layouts.js";
 import { ReactComponent as ChevronDownIcon } from "feather-icons/dist/icons/chevron-down.svg";
 import { ReactComponent as SvgDecoratorBlob1 } from "images/svg-decorator-blob-7.svg";
 import { ReactComponent as SvgDecoratorBlob2 } from "images/svg-decorator-blob-8.svg";
+import AnimationRevealPage from "helpers/AnimationRevealPage";
+import Header from "components/headers/light.js";
+import Footer from "components/footers/FiveColumnWithInputForm.js";
 
 const Subheading = tw(SubheadingBase)`mb-4 text-center`;
 const Heading = tw(SectionHeading)`w-full`;
@@ -40,8 +43,8 @@ const DecoratorBlob2 = styled(SvgDecoratorBlob2)`
 
 export default ({
   subheading = "FAQS",
-  heading = "You have Questions ?",
-  description = "And we have got answers to all of them. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  heading = "Tienes preguntas ?",
+  description = "Aqui podrias encontrar la respuesta que necesitas.",
   faqs = [
     {
       question: "Is lunch provided free of cost ?",
@@ -73,6 +76,8 @@ export default ({
   };
 
   return (
+    <AnimationRevealPage>
+      <Header />
     <Container>
       <ContentWithPaddingXl>
         <Column>
@@ -123,5 +128,7 @@ export default ({
       <DecoratorBlob1/>
       <DecoratorBlob2 />
     </Container>
+    <Footer />
+    </AnimationRevealPage>
   );
 };

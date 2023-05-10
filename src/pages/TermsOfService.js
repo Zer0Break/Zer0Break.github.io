@@ -8,9 +8,11 @@ import Header from "components/headers/light.js";
 import Footer from "components/footers/FiveColumnWithInputForm.js";
 import { SectionHeading } from "components/misc/Headings";
 
+const LinkTerms = tw.a`text-primary-500 border-b-2 border-transparent hocus:border-gray-700 pb-1 transition duration-300`;
 const HeadingRow = tw.div`flex`;
 const Heading = tw(SectionHeading)`text-gray-900 mb-10`;
 const Text = styled.div`
+
   ${tw`text-lg  text-gray-800`}
   p {
     ${tw`mt-2 leading-loose`}
@@ -35,133 +37,134 @@ const Text = styled.div`
   }
 `;
 
-export default ({ headingText = "Terms And Condition" }) => {
+export default ({ headingText = "Términos y condiciones" }) => {
   return (
     <AnimationRevealPage>
       <Header />
-      <Container>
+      <Container tw="relative bg-gray-100 rounded-4xl p-3 my-8">
         <ContentWithPaddingXl>
           <HeadingRow>
             <Heading>{headingText}</Heading>
           </HeadingRow>
           <Text>
 
-            <p>Last updated: April 21, 2048</p>
+            <p>Última actualización: Mayo 08, 2023</p>
 
-            <p>Please read these terms and conditions carefully before using Our Service.</p>
+            <p>Lea atentamente estas condiciones antes de utilizar nuestro servicio.</p>
 
-            <h1>Interpretation and Definitions</h1>
-            <h2>Interpretation</h2>
+            <h1>Interpretación y definiciones</h1>
+            <h2>Interpretación</h2>
             <p>
-              The words of which the initial letter is capitalized have meanings defined under the following conditions.
+            Las palabras cuya letra inicial va en mayúscula tienen significados definidos en las siguientes condiciones.
             </p>
             <p>
-              The following definitions shall have the same meaning regardless of whether they appear in singular or in
+              Las siguientes definiciones tendrán el mismo significado independientemente de que aparezcan en singular o en
               plural.
             </p>
 
-            <h2>Definitions</h2>
-            <p>For the purposes of these Terms and Conditions:</p>
+            <h2>Definiciones</h2>
+            <p>A los efectos de las presentes Condiciones Generales:</p>
             <ul>
+            <br />
               <li>
-                <strong>Affiliate</strong> means an entity that controls, is controlled by or is under common control
-                with a party, where "control" means ownership of 50% or more of the shares, equity interest or other
-                securities entitled to vote for election of directors or other managing authority.
+                <strong>Afiliado</strong> significa una entidad que controla, es controlada por o está bajo control común
+                con una parte, entendiéndose por "control" la propiedad del 50% o más de las acciones, participaciones u otros
+                valores con derecho a voto para la elección de directores u otra autoridad de gestión.
               </li>
               <li>
-                <strong>Company</strong> (referred to as either "the Company", "We", "Us" or "Our" in this Agreement)
-                refers to AutoAprecio Inc., Navi Mumbai.
+                <strong>Compañia</strong> (referido como "la Compañía", "Nosotros", "Nos" o "Nuestro" en este Acuerdo)
+                se refiere a AutoPanas.
               </li>
               <li>
-                <strong>Country</strong> refers to: Maharashtra, India
+                <strong>País</strong>referencia a República dominicana
               </li>
               <li>
-                <strong>Service</strong> refers to the Website.
+                <strong>Servicio</strong> referencia a la página web
               </li>
               <li>
-                <strong>Terms and Conditions</strong> (also referred as "Terms") mean these Terms and Conditions that
-                form the entire agreement between You and the Company regarding the use of the Service.
+                <strong>Términos y condiciones</strong> (también denominadas "Condiciones") se refieren a estas Condiciones que
+                constituyen el acuerdo completo entre Usted y la Empresa en relación con el uso del Servicio.
               </li>
               <li>
-                <strong>Third-party Social Media Service</strong> means any services or content (including data,
-                information, products or services) provided by a third-party that may be displayed, included or made
-                available by the Service.
+                <strong>Servicio de redes sociales de terceros</strong> cualquier servicio o contenido (incluidos datos
+                información, productos o servicios) proporcionados por terceros que puedan mostrarse, incluirse o ponerse a
+                disponibles a través del Servicio.
               </li>
               <li>
-                <strong>Website</strong> refers to AutoAprecio, accessible from https://AutoAprecio.com
-              </li>
+                <strong>Página web</strong> se refiere a AutoPanas, accesible desde <LinkTerms href="https://AutoPanas.com">https://AutoPanas.com</LinkTerms>
+              </li>{" "}
               <li>
-                <strong>You</strong> means the individual accessing or using the Service, or the company, or other legal
-                entity on behalf of which such individual is accessing or using the Service, as applicable.
+                <strong>Tu</strong> se refiere a la persona física que accede o utiliza el Servicio, o a la empresa u otra
+                  entidad jurídica en nombre de la cual dicha persona accede o utiliza el Servicio, según proceda.
               </li>
             </ul>
 
-            <h1>Acknowledgement</h1>
+            <h1>Reconocimiento</h1>
             <p>
-              These are the Terms and Conditions governing the use of this Service and the agreement that operates
-              between You and the Company. These Terms and Conditions set out the rights and obligations of all users
-              regarding the use of the Service.
+              Estos son los Términos y Condiciones que rigen el uso de este Servicio y el acuerdo que opera
+              entre Usted y la Empresa. Estos Términos y Condiciones establecen los derechos y obligaciones de todos los usuarios
+              en relación con el uso del Servicio.
             </p>
             <p>
-              Your access to and use of the Service is conditioned on Your acceptance of and compliance with these Terms
-              and Conditions. These Terms and Conditions apply to all visitors, users and others who access or use the
-              Service.
+              Su acceso y uso del Servicio están condicionados a su aceptación y cumplimiento de estos Términos y Condiciones.
+              Condiciones Generales. Estos Términos y Condiciones se aplican a todos los visitantes, usuarios y otras personas que accedan o utilicen el
+              Servicio.
             </p>
             <p>
-              By accessing or using the Service You agree to be bound by these Terms and Conditions. If You disagree
-              with any part of these Terms and Conditions then You may not access the Service.
+              Al acceder o utilizar el Servicio, Usted acepta quedar vinculado por las presentes Condiciones Generales. Si no está de acuerdo
+              con cualquier parte de estas Condiciones, no podrá acceder al Servicio.
             </p>
             <p>
-              You represent that you are over the age of 18. The Company does not permit those under 18 to use the
-              Service.
+              Usted declara que es mayor de 18 años. La Empresa no permite que los menores de 18 años utilicen el
+              Servicio.
             </p>
             <p>
-              Your access to and use of the Service is also conditioned on Your acceptance of and compliance with the
-              Privacy Policy of the Company. Our Privacy Policy describes Our policies and procedures on the collection,
-              use and disclosure of Your personal information when You use the Application or the Website and tells You
-              about Your privacy rights and how the law protects You. Please read Our Privacy Policy carefully before
-              using Our Service.
-            </p>
-
-            <h1>Links to Other Websites</h1>
-            <p>
-              Our Service may contain links to third-party web sites or services that are not owned or controlled by the
-              Company.
-            </p>
-            <p>
-              The Company has no control over, and assumes no responsibility for, the content, privacy policies, or
-              practices of any third party web sites or services. You further acknowledge and agree that the Company
-              shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be
-              caused by or in connection with the use of or reliance on any such content, goods or services available on
-              or through any such web sites or services.
-            </p>
-            <p>
-              We strongly advise You to read the terms and conditions and privacy policies of any third-party web sites
-              or services that You visit.
+              Su acceso y uso del Servicio también están condicionados a su aceptación y cumplimiento de la
+              Política de privacidad de la Empresa. Nuestra Política de Privacidad describe Nuestras políticas y procedimientos sobre la recopilación,
+              uso y divulgación de su información personal cuando utiliza la Aplicación o el Sitio Web y le informa sobre sus derechos de privacidad y cómo le protege la ley.
+              Sus derechos de privacidad y cómo le protege la ley. Lea atentamente nuestra Política de privacidad antes de
+              de utilizar nuestro Servicio.
             </p>
 
-            <h1>Termination</h1>
+            <h1>Enlaces a otros sitios web</h1>
             <p>
-              We may terminate or suspend Your access immediately, without prior notice or liability, for any reason
-              whatsoever, including without limitation if You breach these Terms and Conditions.
+              Nuestro Servicio puede contener enlaces a sitios web o servicios de terceros que no son propiedad ni están controlados por la
+              Empresa.
             </p>
-            <p>Upon termination, Your right to use the Service will cease immediately.</p>
+            <p>
+              La Empresa no tiene control alguno sobre el contenido, las políticas de privacidad o las prácticas de los sitios web o servicios de terceros, ni asume responsabilidad alguna por los mismos.
+              prácticas de sitios web o servicios de terceros. Además, usted reconoce y acepta que la Empresa
+              no será responsable, directa o indirectamente, de ningún daño o pérdida causados o supuestamente causados por o en relación con el uso o la utilización de los sitios web de terceros.
+              causados por o en conexión con el uso o confianza en cualquier contenido, bienes o servicios disponibles en o a través de dichos sitios web o servicios.
+              o a través de dichos sitios web o servicios.
+            </p>
+            <p>
+              Le recomendamos encarecidamente que lea los términos y condiciones y las políticas de privacidad de los sitios web o servicios de terceros que visite.
+              o servicios de terceros que visite.
+            </p>
 
-            <h1>Limitation of Liability</h1>
+            <h1>Terminación</h1>
             <p>
-              Notwithstanding any damages that You might incur, the entire liability of the Company and any of its
-              suppliers under any provision of this Terms and Your exclusive remedy for all of the foregoing shall be
-              limited to the amount actually paid by You through the Service or 100 USD if You haven't purchased
-              anything through the Service.
+            Podemos terminar o suspender su acceso inmediatamente, sin previo aviso o responsabilidad, por cualquier razón
+              incluyendo, sin limitación, si Usted incumple estos Términos y Condiciones.
+            </p>
+            <p>En caso de rescisión, cesará inmediatamente su derecho a utilizar el Servicio.</p>
+
+            <h1>Limitación de responsabilidad</h1>
+            <p>
+              Sin perjuicio de los daños y perjuicios en que Usted pueda incurrir, toda la responsabilidad de la Empresa y de cualquiera de sus
+              proveedores en virtud de cualquiera de las disposiciones de las presentes Condiciones y el recurso exclusivo de Usted por todo lo anterior estará
+              limitado a la cantidad efectivamente pagada por Usted a través del Servicio o 100 USD si Usted no ha comprado
+              nada a través del Servicio.
             </p>
             <p>
-              To the maximum extent permitted by applicable law, in no event shall the Company or its suppliers be
-              liable for any special, incidental, indirect, or consequential damages whatsoever (including, but not
-              limited to, damages for loss of profits, loss of data or other information, for business interruption, for
-              personal injury, loss of privacy arising out of or in any way related to the use of or inability to use
-              the Service, third-party software and/or third-party hardware used with the Service, or otherwise in
-              connection with any provision of this Terms), even if the Company or any supplier has been advised of the
-              possibility of such damages and even if the remedy fails of its essential purpose.
+              En la medida máxima permitida por la legislación aplicable, en ningún caso la Empresa o sus proveedores serán
+              responsables de ningún daño especial, incidental, indirecto o consecuente (incluyendo, pero no
+              daños por lucro cesante, pérdida de datos u otra información, interrupción de la actividad comercial, lesiones
+              lucro cesante, pérdida de datos u otra información, interrupción de la actividad empresarial, lesiones personales, pérdida de privacidad que
+              el Servicio, el software de terceros y/o el hardware de terceros utilizado con el Servicio, o de otro modo en
+              con cualquiera de las disposiciones de estas Condiciones), incluso si la Empresa o cualquier proveedor ha sido advertido de la
+              de la posibilidad de que se produzcan dichos daños e incluso si el remedio no cumple su finalidad esencial.
             </p>
             <p>
               Some states do not allow the exclusion of implied warranties or limitation of liability for incidental or
@@ -169,98 +172,78 @@ export default ({ headingText = "Terms And Condition" }) => {
               party's liability will be limited to the greatest extent permitted by law.
             </p>
 
-            <h1>"AS IS" and "AS AVAILABLE" Disclaimer</h1>
+            <h1>"Descargo de responsabilidad "TAL CUAL" y "SEGÚN DISPONIBILIDAD</h1>
             <p>
-              The Service is provided to You "AS IS" and "AS AVAILABLE" and with all faults and defects without warranty
-              of any kind. To the maximum extent permitted under applicable law, the Company, on its own behalf and on
-              behalf of its Affiliates and its and their respective licensors and service providers, expressly disclaims
-              all warranties, whether express, implied, statutory or otherwise, with respect to the Service, including
-              all implied warranties of merchantability, fitness for a particular purpose, title and non-infringement,
-              and warranties that may arise out of course of dealing, course of performance, usage or trade practice.
-              Without limitation to the foregoing, the Company provides no warranty or undertaking, and makes no
-              representation of any kind that the Service will meet Your requirements, achieve any intended results, be
-              compatible or work with any other software, applications, systems or services, operate without
-              interruption, meet any performance or reliability standards or be error free or that any errors or defects
-              can or will be corrected.
+              El Servicio se le proporciona "TAL CUAL" y "SEGÚN DISPONIBILIDAD" y con todos los fallos y defectos, sin garantía de ningún tipo.
+              de ningún tipo. En la medida máxima permitida por la legislación aplicable, la Empresa, en su propio nombre y en el de sus
+              nombre de sus Afiliadas y de sus respectivos licenciantes y proveedores de servicios, rechaza expresamente
+              todas las garantías, ya sean expresas, implícitas, legales o de otro tipo, con respecto al Servicio, incluidas
+              todas las garantías implícitas de comerciabilidad, idoneidad para un fin determinado, titularidad y no infracción,
+              y las garantías que puedan derivarse del curso de las negociaciones, el curso de la ejecución, el uso o la práctica comercial.
+              Sin perjuicio de lo anterior, la Empresa no ofrece garantía ni compromiso alguno, ni hace
+              representación de ningún tipo que el Servicio cumplirá con sus requisitos, lograr los resultados previstos, ser
+              compatible o funcione con cualquier otro software, aplicaciones, sistemas o servicios, funcione sin
+              funcionamiento sin interrupciones, que cumpla las normas de rendimiento o fiabilidad, que esté libre de errores o que cualquier error o defecto pueda ser o vaya a ser corregido.
+              puedan ser o vayan a ser corregidos.
             </p>
             <p>
-              Without limiting the foregoing, neither the Company nor any of the company's provider makes any
-              representation or warranty of any kind, express or implied: (i) as to the operation or availability of the
-              Service, or the information, content, and materials or products included thereon; (ii) that the Service
-              will be uninterrupted or error-free; (iii) as to the accuracy, reliability, or currency of any information
-              or content provided through the Service; or (iv) that the Service, its servers, the content, or e-mails
-              sent from or on behalf of the Company are free of viruses, scripts, trojan horses, worms, malware,
-              timebombs or other harmful components.
+              Sin perjuicio de lo anterior, ni la Empresa ni ningún proveedor de la Empresa hacen ninguna
+              representación o garantía de ningún tipo, expresa o implícita: (i) en cuanto al funcionamiento o disponibilidad del
+              Servicio, o la información, contenido y materiales o productos incluidos en el mismo; (ii) que el Servicio
+              será ininterrumpido o estará libre de errores; (iii) en cuanto a la exactitud, fiabilidad o actualidad de cualquier información
+              o contenido proporcionado a través del Servicio; o (iv) que el Servicio, sus servidores, el contenido o los correos electrónicos
+              enviados desde o en nombre de la Empresa estén libres de virus, scripts, troyanos, gusanos, malware
+              bombas de relojería u otros componentes dañinos.
             </p>
             <p>
-              Some jurisdictions do not allow the exclusion of certain types of warranties or limitations on applicable
-              statutory rights of a consumer, so some or all of the above exclusions and limitations may not apply to
-              You. But in such a case the exclusions and limitations set forth in this section shall be applied to the
-              greatest extent enforceable under applicable law.
-            </p>
-
-            <h1>Governing Law</h1>
-            <p>
-              The laws of the Country, excluding its conflicts of law rules, shall govern this Terms and Your use of the
-              Service. Your use of the Application may also be subject to other local, state, national, or international
-              laws.
+              Algunas jurisdicciones no permiten la exclusión de determinados tipos de garantías o la limitación de los derechos legales del consumidor.
+              derechos legales aplicables de un consumidor, por lo que algunas o todas las exclusiones y limitaciones anteriores pueden no ser aplicables a
+              Usted. Pero en tal caso las exclusiones y limitaciones establecidas en esta sección se aplicarán en la
+              medida en que lo permita la legislación aplicable.
             </p>
 
-            <h1>Disputes Resolution</h1>
+            <h1>Derecho aplicable</h1>
             <p>
-              If You have any concern or dispute about the Service, You agree to first try to resolve the dispute
-              informally by contacting the Company.
+              Las leyes del País, excluyendo sus conflictos de normas legales, regirán estos Términos y Su uso del
+              Servicio. Su uso de la Aplicación también puede estar sujeto a otras leyes locales, estatales, nacionales o internacionales.
+              internacionales.
             </p>
 
-            <h1>For European Union (EU) Users</h1>
+            <h1>Resolución de litigios</h1>
             <p>
-              If You are a European Union consumer, you will benefit from any mandatory provisions of the law of the
-              country in which you are resident in.
+              Si tiene alguna duda o disputa sobre el Servicio, se compromete a intentar primero resolver la disputa
+              informalmente poniéndose en contacto con la Empresa.
             </p>
 
-            <h1>United States Legal Compliance</h1>
+            <h1>Divisibilidad y renuncia</h1>
+            <h2>Divisibilidad</h2>
             <p>
-              You represent and warrant that (i) You are not located in a country that is subject to the United States
-              government embargo, or that has been designated by the United States government as a “terrorist
-              supporting” country, and (ii) You are not listed on any United States government list of prohibited or
-              restricted parties.
+            Si alguna disposición de estas Condiciones se considera inaplicable o inválida, dicha disposición se modificará e
+              interpretada para lograr los objetivos de dicha disposición en la mayor medida posible bajo la
+              ley aplicable y las restantes disposiciones continuarán en pleno vigor y efecto.
             </p>
 
-            <h1>Severability and Waiver</h1>
-            <h2>Severability</h2>
+            <h2>Renuncia</h2>
             <p>
-              If any provision of these Terms is held to be unenforceable or invalid, such provision will be changed and
-              interpreted to accomplish the objectives of such provision to the greatest extent possible under
-              applicable law and the remaining provisions will continue in full force and effect.
+            Salvo lo dispuesto en el presente documento, el hecho de no ejercer un derecho o de no exigir el cumplimiento de una obligación
+              en virtud de las presentes Condiciones no afectará a la capacidad de una parte para ejercer dicho derecho o exigir dicho cumplimiento en
+              en cualquier momento posterior, ni la renuncia a un incumplimiento constituirá una renuncia a cualquier incumplimiento posterior.
             </p>
 
-            <h2>Waiver</h2>
+            <h1>Modificaciones de las presentes condiciones</h1>
             <p>
-              Except as provided herein, the failure to exercise a right or to require performance of an obligation
-              under this Terms shall not effect a party's ability to exercise such right or require such performance at
-              any time thereafter nor shall be the waiver of a breach constitute a waiver of any subsequent breach.
+            Nos reservamos el derecho, a nuestra entera discreción, de modificar o sustituir estas Condiciones en cualquier momento. Si una revisión
+              Si una revisión es material, haremos esfuerzos razonables para proporcionar al menos 30 días de antelación antes de cualquier nuevo término
+              entren en vigor. Lo que constituya un cambio sustancial se determinará a nuestra entera discreción.
+            </p>
+            <p>
+              Al continuar accediendo o utilizando Nuestro Servicio después de que dichas revisiones entren en vigor, Usted acepta quedar vinculado
+              por los términos revisados. Si no está de acuerdo con los nuevos términos, en su totalidad o en parte, por favor deje de usar el
+              sitio web y el Servicio.
             </p>
 
-            <h1>Translation Interpretation</h1>
-            <p>
-              These Terms and Conditions may have been translated if We have made them available to You on our Service.
-            </p>
-            <p>You agree that the original English text shall prevail in the case of a dispute.</p>
-
-            <h1>Changes to These Terms and Conditions</h1>
-            <p>
-              We reserve the right, at Our sole discretion, to modify or replace these Terms at any time. If a revision
-              is material We will make reasonable efforts to provide at least 30 days' notice prior to any new terms
-              taking effect. What constitutes a material change will be determined at Our sole discretion.
-            </p>
-            <p>
-              By continuing to access or use Our Service after those revisions become effective, You agree to be bound
-              by the revised terms. If You do not agree to the new terms, in whole or in part, please stop using the
-              website and the Service.
-            </p>
-
-            <h1>Contact Us</h1>
-            <p>If you have any questions about these Terms and Conditions, You can contact us:</p>
+            <h1>Contacte con nosotros</h1>
+            <p>Si tiene alguna pregunta sobre estas Condiciones, puede ponerse en contacto con nosotros:</p>
 
             <ul>
               <li>By email: support@example.com</li>

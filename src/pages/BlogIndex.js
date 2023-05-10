@@ -47,21 +47,21 @@ const ButtonContainer = tw.div`flex justify-center`;
 const LoadMoreButton = tw(PrimaryButton)`mt-16 mx-auto`;
 
 export default ({
-  headingText = "Blog Posts",
+  headingText = "Novedades",
   posts = [
     {
       imageSrc:
-        "https://images.unsplash.com/photo-1499678329028-101435549a4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1024&q=80",
-      category: "Travel Tips",
-      date: "April 21, 2020",
-      title: "Safely Travel in Foreign Countries",
+        "https://www.mbusa.com/content/dam/mb-nafta/us/eq/design/eqs580x4/interior/hotspots/MY23-EQS-SUV-TP-Hyperscreen-XL.jpg",
+      category: "AUTOMOVILISMO",
+      date: "Mayo 03, 2023",
+      title: "Mercedes-Benz busca superar a Tesla en la carrera de autos eléctricos",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "Mercedes-Benz quiere dejar atrás a Tesla en la carrera por los vehículos eléctricos eficientes y para ello incorporó su equipo de Fórmula 1 al proceso de ingeniería. ¿Cómo lo hará?.",
       url: "https://timerse.com",
       featured: true
     },
     getPlaceholderPost(),
-    getPlaceholderPost(),
+    getPlaceholderPost2(),
     getPlaceholderPost(),
     getPlaceholderPost(),
     getPlaceholderPost(),
@@ -93,7 +93,7 @@ export default ({
             <Heading>{headingText}</Heading>
           </HeadingRow>
           <Posts>
-            {posts.slice(0, visible).map((post, index) => (
+            {posts.slice(0, visible).map((post, index) => (          
               <PostContainer key={index} featured={post.featured}>
                 <Post className="group" as="a" href={post.url}>
                   <Image imageSrc={post.imageSrc} />
@@ -106,7 +106,7 @@ export default ({
                 </Post>
               </PostContainer>
             ))}
-          </Posts>
+          </Posts>       
           {visible < posts.length && (
             <ButtonContainer>
               <LoadMoreButton onClick={onLoadMoreClick}>Load More</LoadMoreButton>
@@ -118,14 +118,25 @@ export default ({
     </AnimationRevealPage>
   );
 };
-
+   
 const getPlaceholderPost = () => ({
   imageSrc:
-    "https://images.unsplash.com/photo-1418854982207-12f710b74003?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1024&q=80",
-  category: "Travel Guide",
-  date: "April 19, 2020",
-  title: "Visit the beautiful Alps in Switzerland",
+    "https://www.latercera.com/resizer/KcmGhBhQTIzJzUottUTMrrtCy40=/900x600/smart/cloudfront-us-east-1.images.arcpublishing.com/copesa/R3U4CKW3SRHQFKXQI7VU3JYUDM.png",
+  category: "AUTOMOVILISMO",
+  date: "Mayo 03, 2023",
+  title: "Lo que debes saber del Lamborghini Revuelto que marca el fin de una era",
   description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "La firma italiana Lamborghini presentó su más reciente modelo Revuelto, un bólido que ha combinado la fuerza de tres motores eléctricos que promete superar los 1.000 caballos de fuerza de potencia.",
+  url: "https://reddit.com"
+});
+
+const getPlaceholderPost2 = () => ({
+  imageSrc:
+    "https://cdn.motor1.com/images/mgl/ZnKq0z/s3/cn023_003rm.jpg",
+  category: "AUTOMOVILISMO",
+  date: "Mayo 03, 2023",
+  title: "El Auto Show alista sus motores: la famosa feria de coches comienza en Nueva York",
+  description:
+    "En Nueva York, comienza la feria más importante del automóvil en los Estados Unidos. El evento será desde este viernes hasta el domingo 16 de abril en el Javits Center de Manhattan. Ariel Coro, experto en tecnología, en conversación con Jeniffer Montoya, describe los modelos de vehículos más recientes.",
   url: "https://reddit.com"
 });

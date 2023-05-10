@@ -29,7 +29,7 @@ import { css } from "styled-components/macro"; //eslint-disable-line
 // import Hero from "components/hero/TwoColumnWithPrimaryBackground.js";
 // import Hero from "components/hero/FullWidthWithImage.js";
 // import Hero from "components/hero/BackgroundAsImage.js";
-// import Hero from "components/hero/BackgroundAsImageWithCenteredContent.js";
+import Hero from "components/hero/BackgroundAsImageWithCenteredContent.js";
 
 // import Features from "components/features/ThreeColSimple.js";
 // import Features from "components/features/ThreeColWithSideImage.js";
@@ -64,7 +64,7 @@ import { css } from "styled-components/macro"; //eslint-disable-line
 // import Testimonial from "components/testimonials/SimplePrimaryBackground.js";
 
 // import FAQ from "components/faqs/SimpleWithSideImage.js";
-// import FAQ from "components/faqs/SingleCol.js";
+import FAQ from "components/faqs/SingleCol.js";
 // import FAQ from "components/faqs/TwoColumnPrimaryBackground.js";
 
 // import ContactUsForm from "components/forms/SimpleContactUs.js";
@@ -93,11 +93,11 @@ import { css } from "styled-components/macro"; //eslint-disable-line
 // import LoginPage from "pages/Login.js";
 // import SignupPage from "pages/Signup.js";
 // import PricingPage from "pages/Pricing.js";
-// import AboutUsPage from "pages/AboutUs.js";
-// import ContactUsPage from "pages/ContactUs.js";
-// import BlogIndexPage from "pages/BlogIndex.js";
-// import TermsOfServicePage from "pages/TermsOfService.js";
-// import PrivacyPolicyPage from "pages/PrivacyPolicy.js";
+import AboutUsPage from "pages/AboutUs.js";
+import ContactUsPage from "pages/ContactUs.js";
+import BlogIndexPage from "pages/BlogIndex.js";
+import TermsOfServicePage from "pages/TermsOfService.js";
+import PrivacyPolicyPage from "pages/PrivacyPolicy.js";
 
 import ComponentRenderer from "ComponentRenderer.js";
 import LandingPage from "LandingPage.js";
@@ -124,8 +124,14 @@ export default function App() {
           <Route path="/MainLandingPage" element={<MainLandingPage />} />
           <Route path="/Evaluador" element={<EvaluadorPage />} />
           <Route path="/Problemas" element={<ProblemasPage />} />
+          <Route path="/BlogIndex" element={<BlogIndexPage />} />
           <Route path="/thank-you" element={<ThankYouPage />} />
           <Route path="/" element={<LandingPage />} />
+          <Route path="FaQs" element={<FAQ />} />
+          <Route path="Nosotros" element={<AboutUsPage />} />
+          <Route path="Contacto" element={<ContactUsPage />} />
+          <Route path="Politicas" element={<PrivacyPolicyPage />} />
+          <Route path="Terminos" element={<TermsOfServicePage />} />
         </Routes>
       </Router>
     </>
