@@ -62,8 +62,8 @@ export default ({
 }) => {
   return (
 
-    <Container css={pushDownFooter && tw`mb-20 lg:mb-24`}>
-      <ContentWithPaddingXl>
+    <Container css={pushDownFooter && tw`mb-20 justify-center flex lg:mb-24`}>
+    
         <PrimaryBackgroundContainer>
           <Row>
             <TextContainer>
@@ -93,7 +93,7 @@ export default ({
             <DecoratorBlob2 />
           </DecoratorBlobContainer>
         </PrimaryBackgroundContainer>
-      </ContentWithPaddingXl>
+      
     </Container>
   );
 };
