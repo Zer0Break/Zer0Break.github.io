@@ -1,0 +1,45 @@
+{
+  "name": "autopana",
+  "homepage": "https://zer0break.github.io/",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "export": "next build && next start",
+    "deploy": "yarn build && gh-pages -d out"
+  },
+  "babelMacros": {
+    "twin": {
+      "preset": "styled-components"
+    }
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/material": "^5.12.3",
+    "@svgr/webpack": "^8.0.1",
+    "feather-icons": "^4.29.0",
+    "framer-motion": "^10.12.9",
+    "next": "^13.1.1",
+    "next-compose-plugins": "^2.2.1",
+    "primeicons": "^6.0.1",
+    "primereact": "^9.3.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-modal": "^3.16.1",
+    "react-slick": "^0.29.0",
+    "react-slick-carousel": "^0.14.9",
+    "slick-carousel": "^1.8.1",
+    "styled-components": "5.3.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.3",
+    "@babel/plugin-syntax-typescript": "^7.20.0",
+    "babel-loader": "^9.1.0",
+    "babel-plugin-macros": "^3.1.0",
+    "gh-pages": "^5.0.0",
+    "tailwindcss": "^3.3.1",
+    "twin.macro": "^3.3.0"
+  }
+}
