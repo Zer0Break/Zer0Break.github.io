@@ -48,7 +48,7 @@ const TrendingArticles = () => {
       price: "$98,000",
     },
     {
-      image: "https://cdn.motor1.com/images/mgl/NG1rnM/s1/458spider-3.webp",
+      image: "https://www.marinoperformancemotors.com/imagetag/12612/4/l/Used-2015-Ferrari-458-Spider.jpg",
       title: "Ferrari Spider 2015",
       content: "5,000 mi",
       model: "AWD Turbo",
