@@ -30,6 +30,9 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-modal": "^3.16.1",
+    "react-slick": "^0.29.0",
+    "react-slick-carousel": "^0.14.9",
+    "slick-carousel": "^1.8.1",
     "styled-components": "5.3.6"
   },
   "devDependencies": {

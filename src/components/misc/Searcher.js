@@ -7,10 +7,12 @@ import Select4 from './Select4.js'
 import { PrimaryButton as PrimaryButtonBase } from "./Buttons.js";
 
 
-const PrimaryBackgroundContainer = tw.div` w-3/4 py-6 lg:py-8 xl:py-16 2xl:py-20 bg-white rounded-lg relative shadow-2xl`
+const PrimaryBackgroundContainer = tw.div`w-3/4 py-6 lg:py-8 xl:py-16 2xl:py-20 bg-white rounded-xl relative shadow-xl`
 
-const Row = tw.div`px-4 sm:px-16 mx-auto relative z-10 flex-col lg:flex-row text-center lg:text-left`;
-const SelectRow = tw.div`grid grid-cols-1 items-center justify-center md:grid-cols-1 mt-4 lg:grid-cols-12 gap-2 px-4 sm:px-16 mx-auto relative z-10 flex-col`;
+const SearcherContainer = tw.div`flex justify-center items-center`;
+
+const Row = tw.div`px-4 sm:px-16 mx-auto relative z-10 flex-col lg:flex-row text-center lg:text-center`;
+const SelectRow = tw.div`grid grid-cols-1 items-center justify-center md:grid-cols-2 sm:grid-cols-2 mt-4 lg:grid-cols-12 gap-2 px-4 sm:px-16 mx-auto relative z-10 flex-col`;
 const SelectContainer = tw.div`relative inline-block mx-2  items-center justify-center`;
 
 const ColumnContainer = tw.div`max-w-4xl mb-5`
@@ -29,8 +31,8 @@ const DecoratorBlob2 = tw(SvgDecoratorBlob1)`absolute top-0 right-0 w-80 h-80 tr
 
 
 export default ({
-  subheading = "Buscador de Precios",
-  primaryButtonText = "Next",
+  subheading = "",
+  primaryButtonText = "Buscar",
   primaryButtonUrl = "https://timerse.com",
 
   pushDownFooter = true,
@@ -63,8 +65,8 @@ export default ({
   return (
 
     <Container css={pushDownFooter && tw`mb-20 justify-center flex lg:mb-24`}>
-    
-        <PrimaryBackgroundContainer>
+
+      <SearcherContainer>
           <Row>
             <TextContainer>
               {subheading && <Subheading>{subheading}</Subheading>}
@@ -87,13 +89,8 @@ export default ({
               </PrimaryButton>
             </SelectContainer>
           </SelectRow>
-
-          <DecoratorBlobContainer>
-            <DecoratorBlob1 />
-            <DecoratorBlob2 />
-          </DecoratorBlobContainer>
-        </PrimaryBackgroundContainer>
-      
+          </SearcherContainer>
+          
     </Container>
   );
 };
