@@ -46,7 +46,7 @@ const Description = tw.div``;
 const ButtonContainer = tw.div`flex justify-center`;
 const LoadMoreButton = tw(PrimaryButton)`mt-16 mx-auto`;
 
-export default ({
+export default function Blog({
   headingText = "Novedades",
   posts = [
     {
@@ -79,7 +79,7 @@ export default ({
     getPlaceholderPost(),
     getPlaceholderPost()
   ]
-}) => {
+}) {
   const [visible, setVisible] = useState(7);
   const onLoadMoreClick = () => {
     setVisible(v => v + 6);

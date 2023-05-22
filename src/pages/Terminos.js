@@ -37,7 +37,11 @@ const Text = styled.div`
   }
 `;
 
-export default ({ headingText = "Términos y condiciones" }) => {
+export default function Terminos({
+  headingText = "Términos y condiciones"
+
+}) {
+
   return (
     <AnimationRevealPage>
       <Header />

@@ -1,6 +1,7 @@
 {
   "name": "autopana",
-  "homepage": "https://zer0break.github.io/",
+  "homepage": "https://autopana.vercel.app/",
+  "license": "UNLICENSED",
   "scripts": {
     "dev": "next",
     "build": "next build",
@@ -20,6 +21,7 @@
     "@mui/material": "^5.12.3",
     "@svgr/webpack": "^8.0.1",
     "feather-icons": "^4.29.0",
+    "formik": "^2.2.9",
     "framer-motion": "^10.12.9",
     "next": "^13.1.1",
     "next-compose-plugins": "^2.2.1",

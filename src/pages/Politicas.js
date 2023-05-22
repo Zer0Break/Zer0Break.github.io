@@ -37,7 +37,11 @@ const Text = styled.div`
     }
   }
 `;
-export default ({ headingText = "Política de privacidad" }) => {
+
+export default function Politica ({ 
+  headingText = "Política de privacidad" 
+
+}) {
   return (
     <AnimationRevealPage>
       <Header />

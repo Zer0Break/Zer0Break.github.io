@@ -21,7 +21,7 @@ const D = tw.span`font-bold text-blue-500`;
 const C = tw.span`font-bold text-red-500`;
 const imageCss = tw`rounded-4xl`;
 
-export default () => {
+export default function Index() {
   return (
     <AnimationRevealPage>
       <Hero

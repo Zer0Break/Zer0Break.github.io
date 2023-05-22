@@ -14,13 +14,13 @@ const HeaderContent = tw.div``;
 const Subheading = tw(SubheadingBase)`text-xl mb-4 text-center`;
 const Heading = tw(SectionHeading)`w-full`;
 
-export default ({
+export default function Evaluador ({
 
   subheading = "Conoce tú vehiculo",
   heading = "Honda Civic Type R"
 
 
-}) => {
+}) {
 
   return (
     <AnimationRevealPage disabled>

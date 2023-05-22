@@ -7,7 +7,7 @@ import Footer from "./../components/footers/FiveColumnWithInputForm.js";
 
         
 
-export default () => {
+export default function Problemas() {
       const MainimageCss = tw`rounded-4xl hidden 2xl:flex absolute -mr-24 w-144 -mt-32 object-cover object-left right-0 -z-10 `;
   const MainimageCssLogo = tw`rounded-4xl `;
   
@@ -21,6 +21,7 @@ export default () => {
               imageSrcLogo="https://www.freepnglogos.com/uploads/toyota-logo-png/toyota-logos-brands-10.png"
               imageCss={MainimageCss}
               imageCssLogo={MainimageCssLogo}
+              description={"aaaa"}
       />
 
       <Footer />
