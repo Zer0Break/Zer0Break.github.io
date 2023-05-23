@@ -4,7 +4,7 @@ import tw from "twin.macro";
 import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
 import Image from 'next/image'
-import { Badge } from '@mui/material';
+import Badge from '@mui/material/Badge';
 import useAnimatedNavToggler from "../../helpers/useAnimatedNavToggler.js";
 
 import Logo from "./../../images/auto-aprecio/svg/logoAlter.svg?url";
