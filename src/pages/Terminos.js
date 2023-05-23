@@ -1,7 +1,6 @@
 import React from "react";
 import tw from "twin.macro";
 import styled from "styled-components";
-import { css } from "styled-components/macro"; //eslint-disable-line
 import AnimationRevealPage from "./../helpers/AnimationRevealPage.js";
 import { Container, ContentWithPaddingXl } from "./../components/misc/Layouts";
 import Header from "./../components/headers/Light.js";
@@ -37,7 +36,11 @@ const Text = styled.div`
   }
 `;
 
-export default ({ headingText = "Términos y condiciones" }) => {
+export default function Terminos({
+  headingText = "Términos y condiciones"
+
+}) {
+
   return (
     <AnimationRevealPage>
       <Header />

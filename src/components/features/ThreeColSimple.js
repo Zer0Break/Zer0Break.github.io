@@ -56,13 +56,13 @@ export default ({
       imageSrc: ShieldIconImage,
       title: "Secure",
       description: "We strictly only deal with vendors that provide top notch security.",
-      url: "https://timerse.com"
+      url: "/Evaluador"
     },
     {
       imageSrc: SupportIconImage,
       title: "24/7 Support",
       description: "Lorem ipsum donor amet siti ceali placeholder text",
-      url: "https://google.com"
+      url: "/Problemas"
     },
     {
       imageSrc: CustomizeIconImage,

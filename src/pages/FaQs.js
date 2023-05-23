@@ -40,7 +40,7 @@ const DecoratorBlob2 = styled(SvgDecoratorBlob2)`
 
 
 
-export default ({
+export default function Faqs({
   subheading = "FAQS",
   heading = "Tienes preguntas ?",
   description = "Aqui podrias encontrar la respuesta que necesitas.",
@@ -66,7 +66,7 @@ export default ({
         "La estimación de precios de vehículos se basa en datos de mercado actualizados regularmente. Si bien no podemos garantizar que el precio de venta real de su vehículo coincida exactamente con nuestra estimación, nuestro objetivo es proporcionarle una estimación precisa del valor de mercado actual."
     }
   ]
-}) => {
+}){
   const [activeQuestionIndex, setActiveQuestionIndex] = useState(null);
 
   const toggleQuestion = questionIndex => {

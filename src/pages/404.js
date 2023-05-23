@@ -20,12 +20,12 @@ const BackButton = tw.button`
 export default function Custom404() {
   return (
     <Container>
-      <Title>404 - Page Not Found</Title>
+      <Title>404 - Pagina no encontrada :(</Title>
       <Description>
-        Sorry, the page you are looking for cannot be found.
+        Lo siento, la pagina que usted busca no ha sido encontrada.
       </Description>
       <Link href="/">
-        <BackButton>Go back to Home</BackButton>
+        <BackButton>Volver a Inicio</BackButton>
       </Link>
     </Container>
   );

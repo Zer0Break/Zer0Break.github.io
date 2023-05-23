@@ -21,7 +21,7 @@ const D = tw.span`font-bold text-blue-500`;
 const C = tw.span`font-bold text-red-500`;
 const imageCss = tw`rounded-4xl`;
 
-export default () => {
+export default function Index() {
   return (
     <AnimationRevealPage>
       <Hero
@@ -34,7 +34,7 @@ export default () => {
         watchVideoButtonText="Tutorial"
       />
       <MainFeature
-        subheading={<Subheading>Establecidos desde 2019 </Subheading>}
+        // subheading={<Subheading>Establecidos desde 2019 </Subheading>}
         heading={
           <>
             Realiza una compra
@@ -72,19 +72,19 @@ export default () => {
             imageSrc: carpriceIconImageSrc,
             title: "Busca tu Precio",
             description: "La inteligencia artificial más avanzada para encontrar el precio exacto de tu vehículo",
-            url: "https://google.com"
+            url: "/Evaluador"
           },
           {
             imageSrc: engineIconImageSrc,
             title: "Problemas con tu Vehiculo?",
             description: "Proximamente... Descubre los problemas más comunes de cada modelo de vehículo",
-            url: "https://timerse.com"
+            url: "/Problemas"
           },
           {
             imageSrc: listIconImageSrc,
             title: "Historial de vehiculo",
             description: "Quiere saber si el vehiculo que esta comprando tiene un historial de accidentes o robo? Gratis? Lo tenemos!..",
-            url: "https://reddit.com"
+            url: "/404"
           }
         ]}
 
