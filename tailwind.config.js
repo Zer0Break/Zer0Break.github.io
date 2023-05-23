@@ -25,7 +25,7 @@ module.exports = {
       white: '#fff',
 
       primary: {
-        100: '#a273ff',
+        100: '#A273FF',
         200: '#935bff',
         300: '#8344ff',
         400: '#742cff',
@@ -47,9 +47,8 @@ module.exports = {
         800: '#192b45',
         900: '#16253b',
       },
-
       gray: {
-        "lightest": "#fff",
+        50: '#F2F2F2',
         100: '#f7fafc',
         200: '#edf2f7',
         300: '#e2e8f0',

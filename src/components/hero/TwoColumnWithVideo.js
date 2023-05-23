@@ -59,7 +59,7 @@ const CloseModalButton = tw.button`absolute top-0 right-0 mt-8 mr-8 hocus:text-p
 
 export default ({
   heading = "Y sabemos bien cómo hacerlo!",
- description="Los mejores en apreciaciones de vehículos, con la mejor tecnología y la mejor experiencia en el mercado.",
+  description="Los mejores en apreciaciones de vehículos, con la mejor tecnología y la mejor experiencia en el mercado.",
   primaryButtonText="Iniciemos!",
   primaryButtonUrl="/evaluador",
   watchVideoButtonText="Ver Video",
