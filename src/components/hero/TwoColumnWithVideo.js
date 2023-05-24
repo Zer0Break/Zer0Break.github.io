@@ -1,125 +1,112 @@
-import React, { useState } from "react";
-import styled from "styled-components";
+import React from "react";
 import tw from "twin.macro";
-//eslint-disable-next-line
-import Header from "./../headers/Light.js";
 
-import ReactModalAdapter from "../../helpers/ReactModalAdapter.js";
-import ResponsiveVideoEmbed from "../../helpers/ResponsiveVideoEmbed.js";
-import Image from "next/image.js";
-import PlayIcon from "feather-icons/dist/icons/play-circle.svg";
-import CloseIcon from "feather-icons/dist/icons/x.svg";
-import SvgDecoratorBlob1 from "../../images/svg-decorator-blob-1.svg";
-import SvgDecoratorBlob2 from "../../images/dot-pattern.svg";
-import DesignIllustration from "../../images/design-illustration.svg?url";
-
-const Container = tw.div`relative`;
-const TwoColumn = tw.div`flex flex-col lg:flex-row md:items-center max-w-screen-xl mx-auto py-20 md:py-24`;
-const LeftColumn = tw.div`relative lg:w-6/12 lg:pr-12 flex-shrink-0 text-center lg:text-left`;
-const RightColumn = tw.div`relative mt-12 lg:mt-0 flex flex-col justify-center`;
-
-const Heading = tw.h1`font-black text-3xl md:text-5xl leading-snug max-w-3xl`;
-const Paragraph = tw.p`my-5 lg:my-8 text-sm lg:text-base font-medium text-gray-600 max-w-lg mx-auto lg:mx-0`;
-
-const Actions = tw.div`flex flex-col items-center sm:flex-row justify-center lg:justify-start mt-8`;
-const PrimaryButtonMain = tw.button`font-bold px-8 text-xl lg:px-10 py-5 rounded bg-primary-500 text-gray-100 hocus:bg-primary-700 focus:shadow-outline focus:outline-none transition duration-300`;
-//const PrimaryButtonMain = tw.button`font-bold text-xl px-16 lg:mx-4 py-7 rounded bg-primary-500 text-gray-100 hocus:bg-primary-700 focus:shadow-outline focus:outline-none transition duration-300`;
-const WatchVideoButton = styled.button`
-  ${tw`mt-4 sm:mt-0 sm:ml-8 flex items-center text-secondary-300 transition duration-300 hocus:text-primary-500 focus:outline-none`}
-  .playIcon {
-    ${tw`stroke-1 h-full `}
-  }
-  .playText {
-    ${tw`ml-2 font-medium text-2xl`}
-  }
-`;
-
-const IllustrationContainer = tw.div`flex justify-center md:justify-end items-center relative max-w-3xl lg:max-w-none`;
-
-// Random Decorator Blobs (shapes that you see in background)
-const DecoratorBlob1 = styled(SvgDecoratorBlob1)`
-  ${tw`pointer-events-none opacity-5 absolute left-0 bottom-0 h-64 w-64 transform -translate-x-2/3  -z-10`}
-`;
-const DecoratorBlob2 = styled(SvgDecoratorBlob2)`
-  ${tw`pointer-events-none fill-current text-primary-500 opacity-25 absolute w-32 h-32 right-0 bottom-0 transform translate-x-10 translate-y-10 -z-10`}
-`;
-
-const StyledModal = styled(ReactModalAdapter)`
-  &.mainHeroModal__overlay {
-    ${tw`fixed inset-0 z-50`}
-  }
-  &.mainHeroModal__content {
-    ${tw`xl:mx-auto m-4 sm:m-16 max-w-screen-xl absolute inset-0 flex justify-center items-center rounded-lg bg-gray-200 outline-none`}
-  }
-  .content {
-    ${tw`w-full lg:p-16`}
-  }
-`;
-const CloseModalButton = tw.button`absolute top-0 right-0 mt-8 mr-8 hocus:text-primary-500`;
-
-export default ({
-  heading = "Y sabemos bien cómo hacerlo!",
- description="Los mejores en apreciaciones de vehículos, con la mejor tecnología y la mejor experiencia en el mercado.",
-  primaryButtonText="Iniciemos!",
-  primaryButtonUrl="/evaluador",
-  watchVideoButtonText="Ver Video",
-  watchVideoYoutubeUrl="https://www.youtube.com/embed/wA8LriKDBAI",
-  imageSrc=DesignIllustration,
-  imageCss=null,
-  imageDecoratorBlob = false,
-}) => {
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-
-  const toggleModal = () => setModalIsOpen(!modalIsOpen);
-
+export default () => {
   return (
-    <>
-      <Header />
-      <Container>
-        <TwoColumn>
-          <LeftColumn>
-            <Heading>{heading}</Heading>
-            <Paragraph>{description}</Paragraph>
-            <Actions>
-              <PrimaryButtonMain as="a" href={primaryButtonUrl}>{primaryButtonText}</PrimaryButtonMain>
-              <WatchVideoButton onClick={toggleModal}>
-                <span className="playIconContainer">
-                  <PlayIcon className="playIcon" />
-                </span>
-                <span className="playText">{watchVideoButtonText}</span>
-              </WatchVideoButton>
-            </Actions>
-          </LeftColumn>
-          <RightColumn>
-            <IllustrationContainer>
-              <Image
-                css={imageCss}
-                src={imageSrc}
-                alt="Hero"
-                height={400}
-                width={640}
-                priority={true}
-              />
-              {imageDecoratorBlob && <DecoratorBlob2 />}
-            </IllustrationContainer>
-          </RightColumn>
-        </TwoColumn>
-        <DecoratorBlob1 viewBox="0 0 600 600" />
-        <StyledModal
-          closeTimeoutMS={300}
-          className="mainHeroModal"
-          isOpen={modalIsOpen}
-          onRequestClose={toggleModal}
-          shouldCloseOnOverlayClick={true}
-        >
-          <CloseModalButton onClick={toggleModal}>
-            <CloseIcon tw="w-6 h-6" />
-          </CloseModalButton>
-          <div className="content">
-            <ResponsiveVideoEmbed url={watchVideoYoutubeUrl} tw="w-full" />
-          </div>
-        </StyledModal>
-      </Container>
-    </>
+    <div class="relative">
+    <header class="absolute inset-x-0 top-0 z-10 w-full">
+        <div class="px-4 mx-auto sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <div class="flex-shrink-0">
+                    <a href="#" title="" class="flex">
+                        <img class="w-auto h-8" src="https://cdn.rareblocks.xyz/collection/celebration/images/hero/3/logo.svg" alt="" />
+                    </a>
+                </div>
+
+                <button type="button" class="inline-flex p-2 text-black transition-all duration-200 rounded-md lg:hidden focus:bg-gray-100 hover:bg-gray-100">
+          
+                    <svg class="block w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+
+            
+                    <svg class="hidden w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+
+                <div class="hidden ml-auto lg:flex lg:items-center lg:justify-center lg:space-x-10">
+                    <a href="#" title="" class="text-base font-semibold text-black transition-all duration-200 hover:text-opacity-80"> Features </a>
+
+                    <a href="#" title="" class="text-base font-semibold text-black transition-all duration-200 hover:text-opacity-80"> Solutions </a>
+
+                    <a href="#" title="" class="text-base font-semibold text-black transition-all duration-200 hover:text-opacity-80"> Resources </a>
+
+                    <a href="#" title="" class="text-base font-semibold text-black transition-all duration-200 hover:text-opacity-80"> Pricing </a>
+
+                    <a href="#" title="" class="inline-flex items-center justify-center px-5 py-2.5 text-base font-semibold transition-all duration-200 rounded-full bg-orange-500 text-white hover:bg-orange-600 focus:bg-orange-600" role="button"> Try for free </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="bg-yellow-50 overflow-hidden">
+        <div class="flex flex-col lg:flex-row lg:items-stretch lg:min-h-[800px]">
+            <div class="relative flex items-center justify-center w-full lg:order-2 lg:w-7/12">
+                <div class="absolute bottom-0 right-0 hidden lg:block">
+                    <img class="object-contain w-auto h-48" src="https://cdn.rareblocks.xyz/collection/celebration/images/hero/3/curved-lines.png" alt="" />
+                </div>
+
+                <div class="relative px-4 pt-24 pb-16 text-center sm:px-6 md:px-24 2xl:px-32 lg:py-24 lg:text-left">
+                    <h1 class="text-4xl font-bold text-black sm:text-6xl xl:text-8xl">
+                        Get it done.<br />
+                        Fast, Easy.
+                    </h1>
+                    <p class="mt-8 text-xl text-black">We help you to make your remote work life easier. Build a distruction free working experience.</p>
+
+                    <form action="#" method="POST" class="max-w-xl mx-auto mt-8 bg-white lg:mx-0 sm:bg-transparent lg:mt-12 rounded-xl">
+                        <div class="p-4 sm:p-2 sm:bg-white sm:border-2 sm:border-transparent sm:rounded-full sm:focus-within:border-orange-500 sm:focus-within:ring-1 sm:focus-within:ring-orange-500">
+                            <div class="flex flex-col items-start sm:flex-row">
+                                <div class="flex-1 w-full min-w-0">
+                                    <div class="relative text-gray-400 focus-within:text-gray-600">
+                                        <label for="email" class="sr-only"></label>
+                                        <input
+                                            type="email"
+                                            name="email"
+                                            id="email"
+                                            placeholder="Enter email to get started"
+                                            class="block w-full px-4 py-4 text-base text-center text-black placeholder-gray-500 transition-all duration-200 border-transparent rounded-full sm:text-left focus:border-transparent focus:ring-0 caret-orange-500"
+                                            required=""
+                                        />
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="inline-flex items-center justify-center w-full px-4 py-4 mt-4 font-semibold text-white transition-all duration-200 bg-orange-500 border border-transparent rounded-full sm:w-auto sm:ml-4 sm:mt-0 hover:bg-orange-600 focus:bg-orange-600">
+                                    Try 14 days free
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <p class="mt-5 text-base text-black">Instant access . No credit card required</p>
+                </div>
+
+                <div class="absolute right-0 z-10 -bottom-16 lg:top-24 lg:-left-20">
+                    <img class="w-32 h-32 md:w-40 md:h-40" src="https://cdn.rareblocks.xyz/collection/celebration/images/hero/3/circular-text.png" alt="" />
+                </div>
+            </div>
+
+            <div class="relative w-full overflow-hidden lg:order-1 h-96 lg:h-auto lg:w-5/12">
+                <div class="absolute inset-0">
+                    <img class="object-cover w-full h-full scale-150" src="https://cdn.rareblocks.xyz/collection/celebration/images/hero/3/man-working-on-laptop.jpg" alt="" />
+                </div>
+
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+
+                <div class="absolute bottom-0 left-0">
+                    <div class="p-4 sm:p-6 lg:p-8">
+                        <div class="flex items-center">
+                            <svg class="w-10 h-10 text-orange-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd" />
+                            </svg>
+                            <h2 class="font-bold text-white text-7xl ml-2.5">395</h2>
+                        </div>
+                        <p class="max-w-xs mt-1.5 text-xl text-white">Professionals have organized their desk via PostCra</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
   );
 };

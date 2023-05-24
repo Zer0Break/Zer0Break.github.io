@@ -6,6 +6,8 @@ import Features from "./../components/features/ThreeColSimple.js";
 import MainFeature from "./../components/features/TwoColWithButton.js";
 import MainFeature2 from "./../components/features/TwoColSingleFeatureWithStats2.js";
 import Footer from "./../components/footers/FiveColumnWithInputForm.js";
+import Header from "./../components/headers/Light.js";
+
 
 import HeroImage from "./../images/auto-aprecio/autos/prado.jpg"; 
 import MainFeatureImage from "./../images/auto-aprecio/autos/lexus.jpg"; 
@@ -24,15 +26,8 @@ const imageCss = tw`rounded-4xl`;
 export default () => {
   return (
     <AnimationRevealPage>
-      <Hero
-        heading={<>En AutoPanas sabemos de <HighlightedText>Precios.</HighlightedText></>}
-        description="Herramienta para encontrar el precio actual de cualquier vehiculo en el mercado dominicano"
-        imageSrc={HeroImage}
-        imageCss={imageCss}
-        imageDecoratorBlob={true}
-        primaryButtonText="Precios Nuevos/Usados"
-        watchVideoButtonText="Tutorial"
-      />
+      <Header />
+      <Hero />
       <MainFeature
         subheading={<Subheading>Establecidos desde 2019 </Subheading>}
         heading={
