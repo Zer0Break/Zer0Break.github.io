@@ -10,15 +10,7 @@ import YoutubeIcon from "./../../images/youtube-icon.svg";
 import InstagramIcon from "./../../images/iconoInstagram.svg";
 
 const container_styles = tw`relative bg-gray-200 text-gray-700 px-8 py-20 lg:py-24`
-// const Isnput = ({ hasHover }) => (
-//   <input css={[tw`border`, hasHover && tw`hover:border-black`]} />
-// )
-// const Container = tw.div`relative bg-gray-200 text-gray-700 -mb-8 -mx-8 px-8 py-20 lg:py-24`;
-// const Container = tw.div`
-// relative bg-gray-200 text-gray-700 -mb-8 -mx-8 px-8 py-20 lg:py-24
-// ${({ margins }) => margins && tw`m-20`}
-// `;
-// const Container = ({ margins }) => (<div css={[tw`relative bg-gray-200 text-gray-700 -mb-8 -mx-8 px-8 py-20 lg:py-24`,margins && tw`mx-20`]}></div>)
+
 const Container = styled.div(({ margins }) => [container_styles, margins ? tw`px-20`:tw`-mb-8 -mx-8`])
 
 const Content = tw.div`max-w-screen-xl mx-auto relative z-10`;
