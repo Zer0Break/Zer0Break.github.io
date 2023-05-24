@@ -122,10 +122,10 @@ const TrendingArticles = () => {
             <ImageItem key={index}>
               <img src={data.image} alt={`Imagen ${index + 1}`} style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
               <div tw="bg-transparent w-full p-2 rounded-lg">
-              <h3 tw="text-lg font-bold">{data.title}</h3>
-              <p tw="text-gray-500">{data.content}</p>
-              <p tw="text-gray-700 font-bold mt-3">{data.model}</p>
-              <p tw="bg-blue-200 text-blue-800 mt-6 mb-3 pl-3 pr-3 py-2 inline-block rounded ">{data.price}</p>
+                <h3 tw="text-lg font-bold">{data.title}</h3>
+                <p tw="text-gray-500">{data.content}</p>
+                <p tw="text-gray-700 font-bold mt-3">{data.model}</p>
+                <p tw="bg-blue-200 text-blue-800 mt-6 mb-3 pl-3 pr-3 py-2 inline-block rounded">{data.price}</p>
               </div>
             </ImageItem>
           ))}
@@ -140,7 +140,7 @@ const TrendingArticles = () => {
         <BrandImage src={data.image} alt={`Logo Marca ${index + 1}`} />
         <BrandInfo>
           <h3 tw="text-lg font-bold">{data.title}</h3>
-           <p tw="text-gray-500">{data.subtitle}</p>
+          <p tw="text-gray-500">{data.subtitle}</p>
         </BrandInfo>
       </BrandItem>
         ))}

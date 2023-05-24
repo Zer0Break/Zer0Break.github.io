@@ -20,13 +20,13 @@ p {
   ${tw`mb-6 mt-4 text-3xl font-bold text-center`}
 }`;
 
-export default ({
+export default function Evaluador ({
 
   subheading = "Conoce tú vehiculo",
   heading = "Encuentra tu mejor opción"
 
 
-}) => {
+}) {
 
   return (
     <AnimationRevealPage  >

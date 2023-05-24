@@ -1,4 +1,3 @@
-import { Style } from '@mui/icons-material'
 import GlobalStyles from './../styles/GlobalStyles'
 import Head from 'next/head';
 

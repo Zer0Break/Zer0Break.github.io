@@ -12,7 +12,8 @@ import ShieldIconImage from "./../images/shield-icon.svg?url";
 import CustomerLoveIconImage from "./../images/simple-icon.svg?url";
 
 const Subheading = tw.span`uppercase tracking-wider text-sm`;
-export default () => {
+
+export default function AboutUs() {
   return (
     <AnimationRevealPage>
       <Header />

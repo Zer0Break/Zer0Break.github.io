@@ -1,7 +1,6 @@
 import React from "react";
 import tw from "twin.macro";
 import styled from "styled-components";
-import { css } from "styled-components/macro"; //eslint-disable-line
 import AnimationRevealPage from "./../helpers/AnimationRevealPage.js";
 import { Container, ContentWithPaddingXl } from "./../components/misc/Layouts.js";
 import Header from "./../components/headers/Light.js";
@@ -37,7 +36,11 @@ const Text = styled.div`
     }
   }
 `;
-export default ({ headingText = "Política de privacidad" }) => {
+
+export default function Politica ({ 
+  headingText = "Política de privacidad" 
+
+}) {
   return (
     <AnimationRevealPage>
       <Header />

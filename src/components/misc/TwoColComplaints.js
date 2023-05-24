@@ -62,7 +62,7 @@ export default ({
   ),
   description = (
     <>
-      AutoPana.com posee <span tw="text-primary-600 ">68,573 quejas</span> de esta marca en general. <br></br> Los peores modelos son:  <span tw="text-blue-600 ">2019 RAV4, 2007 Camry, 2008 RAV4, 2009 Camry, and the 2007 RAV4</span>.
+      AutoPana posee <span tw="text-blue-700 font-bold">68,573 quejas</span> de esta marca en general. <br></br> Los peores modelos son:  <span tw="text-blue-600 ">2019 RAV4, 2007 Camry, 2008 RAV4, 2009 Camry, and the 2007 RAV4</span>.
     </>
   ),
   imgDesignIllustration = DesignIllustration,
@@ -80,7 +80,6 @@ export default ({
   imageDecoratorBlobCss = null,
   textOnLeft = true
 }) => {
-  // The textOnLeft boolean prop can be used to display either the text on left or right side of the image.
 
   return (
     <Container>
