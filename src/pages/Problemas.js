@@ -1,5 +1,6 @@
 import React from "react";
-import tw, { css } from "twin.macro";
+import tw, { css, styled } from "twin.macro";
+import { motion } from "framer-motion";
 import Header from "./../components/headers/Light.js";
 import Footer from "./../components/footers/FiveColumnWithInputForm.js";
 
@@ -9,7 +10,7 @@ import car_img from "../images/temp/seinna_model.png";
 import toyota_ejemplo from "../images/temp/toyota_ejemplo.png";
 import toyota_logo from "../images/temp/toyota_logo.png";
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Image from "next/image"; 
 
 import MainFeature_ from './../components/misc/TwoColComplaints.js';
@@ -27,122 +28,122 @@ const Portrait = () => {
     logo: 'https://www.freepnglogos.com/uploads/toyota-logo-png/toyota-logos-brands-10.png',
   }
   
-  const models = [
-    {
-      name: 'Camry',
-      results: 689,
-      quantity: 8,
-    },
-    {
-      name: 'Corolla',
-      results: 462,
-      quantity: 7,
-    },
-    {
-      name: 'Sienna',
-      results: 1322,
-      quantity: 9,
-    },
-    {
-      name: 'Land Cruiser',
-      results: 326,
-      quantity: 5,
-    },
-    {
-      name: 'Land Cruiser Prado',
-      results: 147,
-      quantity: 2,
-    },
-    {
-      name: 'Fortuner',
-      results: 501,
-      quantity: 7,
-    }
-  ];
-  
-  const filtered_models = models.filter((model) => model.name.includes(search))
-  
-  const Search__Results = () => { // to add transparency
-    let color_;
-    const percentage = (quantity) => {
-      // const width = width_ >= 10 ? 100:(width_ * 8.5);
-      const complete = quantity >= 10;
-      const colors = [
-        {
-          quantities: [1,2,3],
-          color: "#57ED9C"
-        },
-        {
-          quantities: [4,5,6],
-          color: "#CFED57"
-        },
-        {
-          quantities: [7],
-          color: "#EDD557"
-        },
-        {
-          quantities: [8],
-          color: "#EDA857"
-        },
-        {
-          quantities: [9],
-          color: "#ED5757"
-        },
-        {
-          quantities: [10],
-          color: "#FF2E2E"
-        },
-      ]
-      
-      colors.map(({ quantities, color }) => {
-        if (quantities.indexOf(quantity) !== -1) {
-          color_ = color;
-        }
-      });
-      return css`
-      &:after {
-        width: ${( complete ? 10: quantity) * 10}%;
-        background-color: ${color_ + ( complete ? 'AD': 59)} 
+    const models = [
+      {
+        name: 'Camry',
+        results: 689,
+        quantity: 8,
+      },
+      {
+        name: 'Corolla',
+        results: 462,
+        quantity: 7,
+      },
+      {
+        name: 'Sienna',
+        results: 1322,
+        quantity: 9,
+      },
+      {
+        name: 'Land Cruiser',
+        results: 326,
+        quantity: 5,
+      },
+      {
+        name: 'Land Cruiser Prado',
+        results: 147,
+        quantity: 2,
+      },
+      {
+        name: 'Fortuner',
+        results: 501,
+        quantity: 7,
       }
-      ${tw`after:content-[''] after:absolute after:top-0 after:left-0 after:h-full after:z-10`}
-    `
-    };
-    
-    const Result = ({name = '', results = 0, quantity = 0, backgroundColor}) => 
-    <li tw="relative flex cursor-pointer px-3 py-2 border-b border-gray-300 last:border-b-0" css={[percentage(quantity)]}>
-      <span tw="font-semibold text-gray-800">{name}</span> <span tw="px-3 font-medium text-gray-400">[{results}]</span> 
-      <span tw="relative flex justify-center items-center rounded-full text-white font-bold p-2 ms-auto h-6 w-6 z-20" css={{ backgroundColor: color_ }}>{quantity}</span>
-    </li>;
-
-    return (
-    <ul tw="bg-gray-200 border border-gray-300 mt-2">
-      { filtered_models.map((props, i) => <Result {...props} key={i} />) }
-    </ul>)
-  }
-
-  const Results__Title = ({ selected_brand, reports, models }) => {
-    return (
-        <p tw="text-lg text-gray-800 mt-7 mb-2">
-          <span tw="font-bold">{ selected_brand }</span> tiene un total de <span tw="font-bold text-blue-700">{reports} reportes</span> entre <b tw="text-primary-500">{models}</b> modelos.
-        </p>
-    )
-  }
+    ];
   
-  const notFound = () => {
-    return (
-      <div tw="flex flex-col items-center">
-        <h3 tw="text-[80px] text-blue-700">
-          ?
-        </h3>
-        <h4 tw="text-base text-gray-500 text-center"> 
-          No hemos encontrado ningún resultado que coincida con su búsqueda.
-        </h4>
-      </div>
-    )
-  }
+    const filtered_models = models.filter((model) => model.name.includes(search))
+  
+    const Search__Results = () => { // to add transparency
+      let color_;
+      const percentage = (quantity) => {
+        // const width = width_ >= 10 ? 100:(width_ * 8.5);
+        const complete = quantity >= 10;
+        const colors = [
+          {
+            quantities: [1,2,3],
+            color: "#57ED9C"
+          },
+          {
+            quantities: [4,5,6],
+            color: "#CFED57"
+          },
+          {
+            quantities: [7],
+            color: "#EDD557"
+          },
+          {
+            quantities: [8],
+            color: "#EDA857"
+          },
+          {
+            quantities: [9],
+            color: "#ED5757"
+          },
+          {
+            quantities: [10],
+            color: "#FF2E2E"
+          },
+        ]
+        
+        colors.map(({ quantities, color }) => {
+          if (quantities.indexOf(quantity) !== -1) {
+            color_ = color;
+          }
+        });
+        return css`
+        &:after {
+          width: ${( complete ? 10: quantity) * 10}%;
+          background-color: ${color_ + ( complete ? 'AD': 59)} 
+        }
+        ${tw`after:content-[''] after:absolute after:top-0 after:left-0 after:h-full after:z-10`}
+      `
+      };
+      
+      const Result = ({name = '', results = 0, quantity = 0, backgroundColor}) => 
+      <li tw="relative flex cursor-pointer px-3 py-2 border-b border-gray-300 last:border-b-0" css={[percentage(quantity)]}>
+        <span tw="font-semibold text-gray-800">{name}</span> <span tw="px-3 font-medium text-gray-400">[{results}]</span> 
+        <span tw="relative flex justify-center items-center rounded-full text-white font-bold p-2 ms-auto h-6 w-6 z-20" css={{ backgroundColor: color_ }}>{quantity}</span>
+      </li>;
+
+      return (
+      <ul tw="bg-gray-200 border border-gray-300 mt-2" css={[filtered_models.length > 6 && tw`overflow-y-scroll`]}>
+        { filtered_models.map((props, i) => <Result {...props} key={i} />) }
+      </ul>)
+    }
+
+    const Results__Title = ({ selected_brand, reports, models }) => {
+      return (
+          <p tw="text-lg text-gray-800 mt-7 mb-2">
+            <span tw="font-bold">{ selected_brand }</span> tiene un total de <span tw="font-bold text-blue-700">{reports} reportes</span> entre <b tw="text-primary-500">{models}</b> modelos.
+          </p>
+      )
+    }
+  
+    const notFound = () => {
+      return (
+        <div tw="flex flex-col items-center">
+          <h3 tw="text-[80px] text-blue-700">
+            ?
+          </h3>
+          <h4 tw="text-base text-gray-500 text-center"> 
+            No hemos encontrado ningún resultado que coincida con su búsqueda.
+          </h4>
+        </div>
+      )
+    }
 
   return (
-    <div tw="relative flex justify-center bg-gray-100 px-6 sm:px-10 min-h-[415px]">
+    <div tw="relative flex justify-center bg-gray-100 px-6 sm:px-10 h-[415px]">
       <Image src={toyota_logo} tw="hidden lg:block absolute left-[5%] top-[50%] translate-y-[-50%] w-[25%] max-w-[400px] z-10" alt="Totoya"/>
 
       <div tw="relative z-20 w-full sm:max-w-[400px] mt-3 mb-6 sm:mb-3 bg-gray-100">
@@ -161,6 +162,16 @@ const Portrait = () => {
 
 const Models = () => {
   const [showMore, setShowMore] = useState(false);
+
+  const models = useRef(null);
+
+  const handleBtn = (val) => {
+    models.current.scroll({
+      top: 0,
+      behavior: "smooth"
+    });
+    setShowMore(val);
+  }
 
   const Model = ({ name = '', tier = 0, description = '', img }) => {
     return (
@@ -181,26 +192,39 @@ const Models = () => {
     )
   }
 
-  const array_of = (n) => [...Array(n).keys()]
   const car = {
     name: 'Sienna 2020',
     img: car_img,
     tier: 1,
     description: 'This model sufre de aa lot of problems that i don’t know but is the worst.',
   }
-  const worst_models = array_of(showMore ? 12 : 7 ).map(() => (car));
-  const showMoreBtn = <div tw="flex justify-center mb-5">
-  <button onClick={() => { setShowMore(!showMore) }} tw="flex items-center text-2xl font-bold uppercase cursor-pointer hover:text-blue-400">
-    Ver m{showMore ? 'enos':'ás'} <ArrowIcon css={[tw`ml-2`, smooth, showMore && tw`rotate-180`]} />
-  </button>
-</div>
+
+  const worst_models = [...Array(12).keys()].map(() => (car));
+  
+  const ShowMoreBtn = () => {
+    if (worst_models.length > 6) {
+      return (<div tw="flex justify-center my-4">
+        <button onClick={() => { handleBtn(!showMore); }} tw="flex items-center text-2xl font-bold uppercase cursor-pointer hover:text-blue-400">
+          Ver m{showMore ? 'enos':'ás'} <ArrowIcon css={[tw`ml-2`, smooth, showMore && tw`rotate-180`]} />
+        </button>
+      </div>)
+    }
+  }
+
+  
   return (
   <div tw="flex flex-col px-5 sm:px-10 pt-5">
-    <h4 tw="mb-5 mt-6 text-3xl font-bold text-gray-900 capitalize">Worst Models</h4>
-    <div tw="flex w-full flex-wrap max-sm:justify-center">
+    <h4 tw="mt-6 text-3xl font-bold text-gray-900 capitalize">Worst Models</h4>
+    <motion.div
+      ref={models}
+      css={[showMore ? tw``:tw``]}
+      tw="flex w-full flex-wrap max-sm:justify-center pt-8 overflow-x-hidden overflow-y-hidden"
+      animate={{ height: showMore ? 'auto': 370 }}
+      transition={{ duration: 0.5, easeOutIn: [0.04, 0.62, 0.23, 0.98] }}
+    >
       { worst_models.map((model, i) => <Model {...model} key={i} />) }
-    </div>
-    { worst_models.length >= 7 ? <showMoreBtn /> : <></>}
+    </motion.div>
+    <ShowMoreBtn />
   </div>)
 }
 export default function Problemas() {
