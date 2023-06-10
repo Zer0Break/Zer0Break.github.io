@@ -9,11 +9,11 @@ import { PrimaryButton as PrimaryButtonBase } from "./Buttons.js";
 
 const PrimaryBackgroundContainer = tw.div`w-3/4 py-6 lg:py-8 xl:py-16 2xl:py-20 bg-white rounded-xl relative shadow-xl`
 
-const SearcherContainer = tw.div`flex justify-center items-center`;
+const SearcherContainer = tw.div`flex justify-center items-center max-w-screen-xl mx-auto`;
 
 const Row = tw.div`px-4 sm:px-16 mx-auto relative z-10 flex-col lg:flex-row text-center lg:text-center`;
 const SelectRow = tw.div`grid grid-cols-1 items-center justify-center md:grid-cols-2 sm:grid-cols-2 mt-4 lg:grid-cols-12 gap-2 px-4 sm:px-16 mx-auto relative z-10 flex-col`;
-const SelectContainer = tw.div`relative inline-block mx-2  items-center justify-center`;
+const SelectContainer = tw.div`relative inline-block mx-2 items-center justify-center`;
 
 const ColumnContainer = tw.div`max-w-4xl mb-5`
 const TextContainer = tw(ColumnContainer)`font-bold`;
