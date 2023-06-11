@@ -188,22 +188,23 @@ const Portrait = () => {
 }
 
 const Models = () => {
-    const [showMore, setShowMore] = useState(false);
+    const [showMore_worst, setShowMore_worst] = useState(false);
+    const [showMore_best, setShowMore_best] = useState(false);
 
     const models = useRef(null);
 
-    const handleBtn = (val) => {
+    const handleBtn = (val, which = 'worst') => {
       models.current.scroll({
         top: 0,
         behavior: "smooth"
       });
-      setShowMore(val);
+      which === 'best' ? setShowMore_best(val) : setShowMore_worst(val);
     }
 
-    const Model = ({ name = '', tier = 0, description = '', img }) => {
-      return (
+    const Model = ({ advertisement, name = '', tier = 0, description = '', img }) => {
+      const card = (
         <div className="group" tw="relative w-full sm:w-[50%] lg:w-[33.33%] px-6 lg:px-8 hover:scale-105 hover:cursor-pointer" css={[smooth()]}>
-          <div tw="absolute top-[-12px] left-[10px] min-[1095px]:left-[22px] flex justify-center bg-blue-600 group-hover:bg-blue-500 transition rounded-full px-2 text-3xl text-white font-bold w-[45px] z-20" css={[smooth]}>
+          <div tw="absolute top-[-12px] left-[10px] min-[1095px]:left-[22px] flex justify-center bg-blue-600 group-hover:bg-blue-500 transition rounded-full px-2 text-3xl text-white font-bold w-[45px] z-20" css={[smooth()]}>
             { tier }
           </div>
           <div tw="w-full relative bg-gray-200 border border-gray-300 overflow-hidden sm:mr-10 mb-10 rounded-lg">
@@ -212,46 +213,84 @@ const Models = () => {
             </div>
             <div tw="p-4">
               <h3 tw="mb-1 font-bold text-lg">{ name }</h3>
-              <p tw="">{ description }</p>
+              <p>{ description }</p>
             </div>
           </div>
         </div>
-      )
+      );
+      const advertisement_card = (<div tw="relative w-full sm:w-[50%] lg:w-[33.33%] h-[360px] px-6 lg:px-8 hover:cursor-pointer" css={[smooth()]}>AD</div>)
+      return advertisement ? advertisement_card : card;
     }
 
     const car = {
+      advertisement: false,
       name: 'Sienna 2020',
       img: car_img,
       tier: 1,
       description: 'This model sufre de aa lot of problems that i don’t know but is the worst.',
     }
 
-    const worst_models = [...Array(12).keys()].map(() => (car));
+    const worst_models = [...Array(12).keys()].map((car_, i) => car);
     
-    const ShowMoreBtn = () => {
+    const ShowMoreBtn_worst = () => {
       if (worst_models.length > 6) {
         return (<div tw="flex justify-center my-4">
-          <button onClick={() => { handleBtn(!showMore); }} tw="flex items-center text-2xl font-bold uppercase cursor-pointer hover:text-blue-400">
-            Ver m{showMore ? 'enos':'ás'} <ArrowIcon css={[tw`ml-2`, smooth(), showMore && tw`rotate-180`]} />
+          <button onClick={() => { handleBtn(!showMore_worst, 'worst'); }} tw="flex items-center text-2xl font-bold uppercase cursor-pointer hover:text-blue-400">
+            Ver m{showMore_worst ? 'enos':'ás'} <ArrowIcon css={[tw`ml-2`, smooth(), showMore_worst && tw`rotate-180`]} />
           </button>
         </div>)
       }
     }
-
+    const ShowMoreBtn_best = () => {
+      if (worst_models.length > 6) {
+        return (<div tw="flex justify-center my-4">
+          <button onClick={() => { handleBtn(!showMore_best, 'best'); }} tw="flex items-center text-2xl font-bold uppercase cursor-pointer hover:text-blue-400">
+            Ver m{showMore_best ? 'enos':'ás'} <ArrowIcon css={[tw`ml-2`, smooth(), showMore_best && tw`rotate-180`]} />
+          </button>
+        </div>)
+      }
+    }
   
+    const renderModels = (models) => { 
+      let indexes = [];
+      let new_models = [...models];
+      models.map( (model_, i) => {
+        if ((i + 1) % 5 === 0) indexes.push(i)
+      });
+      indexes.map( (element) => {
+        new_models.splice(element, 0, { advertisement: true })  
+      })
+      return new_models.map((model, i) => <Model {...model} key={i} />)
+
+    }
   return (
-  <div tw="flex flex-col px-5 sm:px-10 pt-5">
-    <h4 tw="mt-6 text-3xl font-bold text-gray-900 capitalize ps-6 lg:ps-8">Worst Models</h4>
-    <motion.div
-      ref={models}
-      tw="flex w-full flex-wrap max-sm:justify-center pt-8 overflow-x-hidden overflow-y-hidden"
-      animate={{ height: showMore ? 'auto' : 370 }}
-      transition={{ duration: 0.5, easeOutIn: [0.04, 0.62, 0.23, 0.98] }}
-      >
-      { worst_models.map((model, i) => <Model {...model} key={i} />) }
-    </motion.div>
-    <ShowMoreBtn />
-  </div>)
+    <>
+      <div tw="flex flex-col px-5 sm:px-10 pt-5">
+        <h4 tw="mt-6 text-3xl font-bold text-gray-900 capitalize ps-6 lg:ps-8">Worst Models</h4>
+        <motion.div
+          ref={models}
+          tw="flex w-full flex-wrap max-sm:justify-center pt-8 overflow-x-hidden overflow-y-hidden"
+          animate={{ height: showMore_worst ? 'auto' : 370 }}
+          transition={{ duration: 0.5, easeOutIn: [0.04, 0.62, 0.23, 0.98] }}
+          >
+          { renderModels(worst_models) }
+        </motion.div>
+        <ShowMoreBtn_worst />
+      </div>
+    <div tw="flex flex-col px-5 sm:px-10 pt-5">
+      <h4 tw="mt-6 text-3xl font-bold text-gray-900 capitalize ps-6 lg:ps-8">Best Models</h4>
+      <motion.div
+        ref={models}
+        tw="flex w-full flex-wrap max-sm:justify-center pt-8 overflow-x-hidden overflow-y-hidden"
+        animate={{ height: showMore_best ? 'auto' : 370 }}
+        transition={{ duration: 0.5, easeOutIn: [0.04, 0.62, 0.23, 0.98] }}
+        >
+        { renderModels(worst_models) }
+      </motion.div>
+      <ShowMoreBtn_best />
+    </div>
+    </>
+  )
 }
 export default function Problemas() {
   return (
