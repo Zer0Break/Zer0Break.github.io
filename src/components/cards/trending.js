@@ -3,17 +3,17 @@ import tw from "twin.macro";
 import "tailwindcss/tailwind.css"; // Importa los estilos de Tailwind CSS
 
 
-const Container = tw.div`flex justify-between items-center w-4/5 mx-auto mb-10 mt-4`;
-const Title = tw.h2`text-2xl font-bold `;
-const ButtonGroup = tw.div`flex flex-wrap justify-center`;
-const Button = tw.button`text-lg bg-primary-500 hover:bg-blue-700 text-white font-bold py-2 px-3 rounded mt-2 md:mt-0 md:mr-0 ml-2 
+const Container = tw.div`flex justify-between items-center w-4/5 mb-10 mt-4 max-w-screen-xl mx-auto`;
+const Title = tw.h2`text-2xl font-bold text-left`;
+const ButtonGroup = tw.div`flex flex-wrap justify-end`;
+const Button = tw.button`text-lg bg-primary-500 hover:bg-blue-700 text-white font-bold py-2 px-3 mr-0 ml-2 rounded mt-2 md:mt-0 
 transition duration-300 ease-in-out hover:bg-blue-700 hover:text-white hover:shadow-md hover:scale-100 active:bg-blue-700 
 active:text-black active:shadow-inner active:scale-90 `;
-const ImageContainer = tw.div`flex justify-center w-full`;
+const ImageContainer = tw.div`flex justify-center w-full max-w-screen-xl mx-auto`;
 const ImageGrid = tw.div`grid grid-cols-1 md:grid-cols-3 gap-10 w-4/5`;
 const ImageItem = tw.div`flex flex-col items-center rounded-lg  p-0 w-full mb-16
 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl cursor-pointer`;
-const BrandsContainer = tw.div`bg-gray-100 py-24 px-4 mt-12 mb-16 mx-auto rounded-xl`;
+const BrandsContainer = tw.div`bg-gray-100 py-24 px-4 mt-12 mb-16 mx-auto rounded-xl max-w-screen-xl mx-auto`;
 const BrandsTitle = tw.h2`w-4/5 mx-auto text-2xl font-bold`;
 const BrandsSubtitle = tw.h3`w-4/5 mx-auto text-lg text-gray-600`;
 const BrandGrid = tw.div`flex flex-col gap-4 my-10 md:grid md:grid-cols-2 sm:grid-cols-2 grid grid-cols-1`;

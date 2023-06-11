@@ -37,7 +37,7 @@ export default function Evaluador ({
             <Heading>{heading}</Heading>
       </HeaderContent>
       <Image src={imagen} alt="typeR" />
-      <Texto><p>Que vehiculo buscas ?</p></Texto>
+      <Texto><p>¿Que vehiculo buscas?</p></Texto>
       <Buscador tw="my-8 justify-center items-center" />
       </Column>
       <Trending />
