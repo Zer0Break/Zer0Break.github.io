@@ -16,17 +16,28 @@ import Image from "next/image";
 import MainFeature_ from './../components/misc/TwoColComplaints.js';
 import AnimationRevealPage from "./../helpers/AnimationRevealPage.js";
 
-const smooth = tw`transition duration-300 ease-in-out transform`;
+const smooth = (speed = 'normal') => {
+  const speeds = {
+    fast: 100,
+    normal: 300,
+  }
+  return css`
+    & {
+      transition-duration: ${ speeds[speed] + 'ms' };
+      ${tw`transition-all ease-in-out`}
+    }
+  `;
+};
 
 const Portrait = () => {
-  const MainimageCss = tw`rounded-4xl hidden 2xl:flex absolute -mr-24 w-144 -mt-32 object-cover object-left right-0 -z-10 `;
-  const MainimageCssLogo = tw`rounded-4xl`;
+    const MainimageCss = tw`rounded-4xl hidden 2xl:flex absolute -mr-24 w-144 -mt-32 object-cover object-left right-0 -z-10 `;
+    const MainimageCssLogo = tw`rounded-4xl`;
   
-  const [search, setSearch] = useState('');
-  const toyota = {
-    car: 'https://media.dealervenom.com/jellies/Toyota/RAV4/C431510_1G3_Side.png?auto=compress,format&w=640&h=480&fit=clamp',
-    logo: 'https://www.freepnglogos.com/uploads/toyota-logo-png/toyota-logos-brands-10.png',
-  }
+    const [search, setSearch] = useState('');
+    const toyota = {
+      car: 'https://media.dealervenom.com/jellies/Toyota/RAV4/C431510_1G3_Side.png?auto=compress,format&w=640&h=480&fit=clamp',
+      logo: 'https://www.freepnglogos.com/uploads/toyota-logo-png/toyota-logos-brands-10.png',
+    }
   
     const models = [
       {
@@ -61,12 +72,11 @@ const Portrait = () => {
       }
     ];
   
-    const filtered_models = models.filter((model) => model.name.includes(search))
+    const filtered_models = models.filter( (model) => model.name.toUpperCase().includes(search.toUpperCase()) );
   
     const Search__Results = () => { // to add transparency
       let color_;
-      const percentage = (quantity) => {
-        // const width = width_ >= 10 ? 100:(width_ * 8.5);
+      const result_styles = (quantity) => {
         const complete = quantity >= 10;
         const colors = [
           {
@@ -96,27 +106,44 @@ const Portrait = () => {
         ]
         
         colors.map(({ quantities, color }) => {
-          if (quantities.indexOf(quantity) !== -1) {
-            color_ = color;
-          }
+          if (quantities.indexOf(quantity) !== -1) color_ = color;
         });
         return css`
         &:after {
           width: ${( complete ? 10: quantity) * 10}%;
-          background-color: ${color_ + ( complete ? 'AD': 59)} 
+          background-color: ${color_ + ( complete ? 'AD': 59)};
         }
-        ${tw`after:content-[''] after:absolute after:top-0 after:left-0 after:h-full after:z-10`}
-      `
+        &:hover {
+          border-color: ${color_};
+        }
+        &:hover + li {
+          border-top-color: ${color_}
+        }
+        &:hover span.title {
+          ${tw`text-black`}
+        }
+        &:hover span.results {
+          ${tw`text-gray-500`}
+        }
+        /* border */ 
+        ${tw`border border-gray-300 border-b-0 first:rounded-t last:border-b last:rounded-b`}
+        
+       /* color bar */
+        ${tw`after:content-[''] after:absolute after:top-0 after:left-0 after:h-full`}
+        /* main styles */
+        ${tw`relative flex cursor-pointer px-3 py-2`}
+        ${smooth('fast')}
+        `
       };
       
-      const Result = ({name = '', results = 0, quantity = 0, backgroundColor}) => 
-      <li tw="relative flex cursor-pointer px-3 py-2 border-b border-gray-300 last:border-b-0" css={[percentage(quantity)]}>
-        <span tw="font-semibold text-gray-800">{name}</span> <span tw="px-3 font-medium text-gray-400">[{results}]</span> 
-        <span tw="relative flex justify-center items-center rounded-full text-white font-bold p-2 ms-auto h-6 w-6 z-20" css={{ backgroundColor: color_ }}>{quantity}</span>
+      const Result = ({ name = '', results = 0, quantity = 0 }) => 
+      <li css={[result_styles(quantity)]}>
+        <span className="title" tw="font-semibold z-1 text-gray-700" css={[smooth()]}>{name}</span> <span className="results" tw="px-3 font-medium text-gray-400" css={[smooth('fast')]}>[{results}]</span> 
+        <span tw="relative flex justify-center items-center rounded-full text-white font-bold p-2 ms-auto h-6 w-6" css={{ backgroundColor: color_ }}>{quantity}</span>
       </li>;
 
       return (
-      <ul tw="bg-gray-200 border border-gray-300 mt-2" css={[filtered_models.length > 6 && tw`overflow-y-scroll`]}>
+      <ul tw="bg-gray-200 mt-2 max-h-[250px] rounded" css={[filtered_models.length > 6 && tw`overflow-y-scroll`]}>
         { filtered_models.map((props, i) => <Result {...props} key={i} />) }
       </ul>)
     }
@@ -161,67 +188,66 @@ const Portrait = () => {
 }
 
 const Models = () => {
-  const [showMore, setShowMore] = useState(false);
+    const [showMore, setShowMore] = useState(false);
 
-  const models = useRef(null);
+    const models = useRef(null);
 
-  const handleBtn = (val) => {
-    models.current.scroll({
-      top: 0,
-      behavior: "smooth"
-    });
-    setShowMore(val);
-  }
-
-  const Model = ({ name = '', tier = 0, description = '', img }) => {
-    return (
-      <div tw="relative lg:min-w-[330px] w-full lg:w-4/12 hover:scale-105 hover:cursor-pointer px-8" css={[smooth]}>
-        <div tw="absolute top-[-12px] left-[22px] flex justify-center bg-blue-600 rounded-full px-2 text-3xl text-white font-bold w-[45px] z-20">
-          { tier }
-        </div>
-        <div tw="w-full relative bg-gray-200 border border-gray-300 overflow-hidden sm:mr-10 mb-10 rounded-lg">
-          <div tw="flex justify-center items-center bg-blue-400 h-[200px] w-full">
-            <Image src={ img } tw="w-6/12 lg:w-[80%]" alt="Carro"/>
-          </div>
-          <div tw="p-4">
-            <h3 tw="mb-1 font-bold text-lg">{ name }</h3>
-            <p>{ description }</p>
-          </div>
-        </div>
-      </div>
-    )
-  }
-
-  const car = {
-    name: 'Sienna 2020',
-    img: car_img,
-    tier: 1,
-    description: 'This model sufre de aa lot of problems that i don’t know but is the worst.',
-  }
-
-  const worst_models = [...Array(12).keys()].map(() => (car));
-  
-  const ShowMoreBtn = () => {
-    if (worst_models.length > 6) {
-      return (<div tw="flex justify-center my-4">
-        <button onClick={() => { handleBtn(!showMore); }} tw="flex items-center text-2xl font-bold uppercase cursor-pointer hover:text-blue-400">
-          Ver m{showMore ? 'enos':'ás'} <ArrowIcon css={[tw`ml-2`, smooth, showMore && tw`rotate-180`]} />
-        </button>
-      </div>)
+    const handleBtn = (val) => {
+      models.current.scroll({
+        top: 0,
+        behavior: "smooth"
+      });
+      setShowMore(val);
     }
-  }
+
+    const Model = ({ name = '', tier = 0, description = '', img }) => {
+      return (
+        <div className="group" tw="relative w-full sm:w-[50%] lg:w-[33.33%] px-6 lg:px-8 hover:scale-105 hover:cursor-pointer" css={[smooth()]}>
+          <div tw="absolute top-[-12px] left-[10px] min-[1095px]:left-[22px] flex justify-center bg-blue-600 group-hover:bg-blue-500 transition rounded-full px-2 text-3xl text-white font-bold w-[45px] z-20" css={[smooth]}>
+            { tier }
+          </div>
+          <div tw="w-full relative bg-gray-200 border border-gray-300 overflow-hidden sm:mr-10 mb-10 rounded-lg">
+            <div tw="flex justify-center items-center bg-blue-400 group-hover:bg-blue-300 h-[200px] w-full" css={[smooth()]}>
+              <Image src={ img } tw="max-w-[290px] w-[80%]" alt="Carro"/>
+            </div>
+            <div tw="p-4">
+              <h3 tw="mb-1 font-bold text-lg">{ name }</h3>
+              <p tw="">{ description }</p>
+            </div>
+          </div>
+        </div>
+      )
+    }
+
+    const car = {
+      name: 'Sienna 2020',
+      img: car_img,
+      tier: 1,
+      description: 'This model sufre de aa lot of problems that i don’t know but is the worst.',
+    }
+
+    const worst_models = [...Array(12).keys()].map(() => (car));
+    
+    const ShowMoreBtn = () => {
+      if (worst_models.length > 6) {
+        return (<div tw="flex justify-center my-4">
+          <button onClick={() => { handleBtn(!showMore); }} tw="flex items-center text-2xl font-bold uppercase cursor-pointer hover:text-blue-400">
+            Ver m{showMore ? 'enos':'ás'} <ArrowIcon css={[tw`ml-2`, smooth(), showMore && tw`rotate-180`]} />
+          </button>
+        </div>)
+      }
+    }
 
   
   return (
   <div tw="flex flex-col px-5 sm:px-10 pt-5">
-    <h4 tw="mt-6 text-3xl font-bold text-gray-900 capitalize">Worst Models</h4>
+    <h4 tw="mt-6 text-3xl font-bold text-gray-900 capitalize ps-6 lg:ps-8">Worst Models</h4>
     <motion.div
       ref={models}
-      css={[showMore ? tw``:tw``]}
       tw="flex w-full flex-wrap max-sm:justify-center pt-8 overflow-x-hidden overflow-y-hidden"
-      animate={{ height: showMore ? 'auto': 370 }}
+      animate={{ height: showMore ? 'auto' : 370 }}
       transition={{ duration: 0.5, easeOutIn: [0.04, 0.62, 0.23, 0.98] }}
-    >
+      >
       { worst_models.map((model, i) => <Model {...model} key={i} />) }
     </motion.div>
     <ShowMoreBtn />
