@@ -9,7 +9,7 @@ import styled from "styled-components";
 const MainContainer = tw.div`flex flex-col justify-start h-full rounded-lg mt-6 mb-16 max-w-screen-xl mx-auto`;
 const Container = tw.div`p-8 rounded-lg w-full md:w-2/3 bg-gray-100 flex flex-col justify-start shadow-xl`;
 const Title = tw.h2`text-4xl font-bold mb-6 md:max-w-screen-xl`;
-const Divider = tw.div`border-b-2 border-blue-400 w-4/6 mb-6 -mt-6`;
+const Divider = tw.div`border-b-2 border-primary-500 w-4/6 mb-6 -mt-6`;
 const TextContainer = tw.div`flex items-start mb-10`;
 const Text = tw.p`text-sm`;
 const ButtonContainerWp = tw.div`flex justify-end mb-2`;

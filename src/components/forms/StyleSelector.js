@@ -4,7 +4,7 @@ import tw from 'twin.macro';
 const MainContainer = tw.div`flex flex-col justify-start h-full rounded-lg mt-6 mb-16 max-w-screen-xl mx-auto`;
 const Container = tw.div`p-8 rounded-lg w-full md:w-2/3 bg-gray-100 flex flex-col justify-start shadow-xl`;
 const Title = tw.h2`text-4xl font-bold mb-6 md:max-w-screen-xl`;
-const Divider = tw.div`border-b-2 border-blue-400 w-4/6 mb-6 -mt-6`;
+const Divider = tw.div`border-b-2 border-primary-500 w-4/6 mb-6 -mt-6`;
 const ButtonGroup = tw.div`flex flex-col flex-wrap break-words gap-4 mb-10 md:grid md:grid-cols-2 md:gap-4 md:flex md:flex-wrap`;
 const Button = tw.button`relative bg-gray-200 border hover:border-gray-500 transition duration-100 ease-in-out transform hover:scale-105 text-black py-3 px-3 rounded-lg text-sm text-left`;
 const PriceText = tw.span`text-xs text-gray-700 ml-2 self-end`;
@@ -55,7 +55,7 @@ const StyleSelector = ({ title, buttonImages, buttons, isCarCategoryPage }) => {
     setStyles(updatedStyles);
     setSelectedStyle(style);
 
-    // Obtener el texto del botón seleccionado
+    // Obtener el texto del botón seleccionado, en pocas palabras el estilo
     setSelectedButtonText(style);
   };
 
